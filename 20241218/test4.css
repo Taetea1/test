@@ -1,0 +1,15 @@
+/* a:hover {
+    color: #03c75a;
+}
+div:hover {
+    cursor: pointer;
+    color: red;
+} */
+
+a:active{
+    color: #03c75a;
+}
+input:focus{
+    background-color: orange;
+    color: red;
+}

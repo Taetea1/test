@@ -1,0 +1,13 @@
+ /* 
+ .으로 불러올때는 class
+ #으로 불러올때는 id
+  */
+.one{
+    color: blue;
+}
+.orange{
+    color:orange;
+}
+#name{
+    background-color: red;
+}

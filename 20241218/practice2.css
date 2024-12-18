@@ -1,0 +1,35 @@
+body{
+    color: white;
+    background-color: gray;
+}
+div{
+    background-color: red;
+}
+#f{
+    background-color: blue;
+}
+.s{
+    background-color: green;
+}
+
+.first{
+    color:red;
+}
+.second{
+    color:orange;
+}
+.third{
+    color:yellow;
+}
+.four{
+    color:green;
+}
+.five{
+    color:blue;
+}
+.six{
+    color:navy;
+}
+.seven{
+    color:purple;
+}

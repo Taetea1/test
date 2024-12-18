@@ -1,0 +1,18 @@
+/* 일치선택자
+span.orange{
+    color: red;
+} */
+/* 
+자식선택자
+ul > .orange{
+    color: orange;
+} */
+/* 
+하위선택자
+div .orange{
+    color: orange;
+} */
+
+.orange + li {
+    color: orange;
+}
