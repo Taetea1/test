@@ -1,0 +1,76 @@
+.boxWrap {
+    background-color: beige;
+    height: 100vh;
+}
+/* 설문조사 */
+.box1{
+    border-top: 10px solid rgb(201, 169, 128);
+    width: 500px;
+    background-color: white;
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 15px;
+}
+/* 이름 이메일 */
+.box2 {
+    width: 500px;
+    background-color: white;
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 15px;
+}
+.box2:focus-within{
+    border-left: 8px solid rgb(239, 215, 183);
+    box-shadow: 0px 0px 5px 5px #ccc;
+}
+/* 나이 */
+.box3 {
+    width: 500px;
+    background-color: white;
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 15px;
+}
+.box3:focus-within{
+    border-left: 8px solid rgb(239, 215, 183);
+    box-shadow: 0px 0px 5px 5px #ccc;
+}
+/* 설문조사 카테고리 */
+.box4 {
+    width: 500px;
+    background-color: white;
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 15px;
+}
+.box4:focus-within{
+    border-left: 8px solid rgb(239, 215, 183);
+    box-shadow: 0px 0px 5px 5px #ccc;
+}
+/* 원하는 강의 */
+.box5 {
+    width: 500px;
+    background-color: white;
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 15px;
+}
+.box5:focus-within{
+    border-left: 8px solid rgb(239, 215, 183);
+    box-shadow: 0px 0px 5px 5px #ccc;
+}
+/* 하고 싶은 말 */
+.box6 {
+    width: 500px;
+    background-color: white;
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 15px;
+}
+.box6:focus-within{
+    border-left: 8px solid rgb(239, 215, 183);
+    box-shadow: 0px 0px 5px 5px #ccc;
+}
+.box6{
+    text-align: center;
+}

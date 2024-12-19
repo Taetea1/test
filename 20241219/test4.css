@@ -1,0 +1,27 @@
+.box{
+    width: 100%;
+}
+
+.boxWrap{
+    /* 최대 1280px까지만 늘어나라 */
+    max-width: 1280px;
+    /* 수평으로 */
+    display: flex;
+    /* 위치유지 */
+    justify-content: space-between;
+    /* 항상 정가운데 유지 */
+    margin: 0px auto;
+}
+
+.red{
+    width: 100%;
+    background-color: red;
+}
+.blue{
+    width: 100%;
+    background-color: blue;
+}
+.black{
+    width: 100%;
+    background-color: black;
+}

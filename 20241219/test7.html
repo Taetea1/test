@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./test7.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="boxWrap">
+        <div class="box1">
+            <h2>설문조사</h2>
+        </div>
+        <div class="box2">
+            <p>
+                이름<input placeholder="이름을 입력해주세요." type="text"><br />
+                이메일<input placeholder="love@example.com" type="text">
+            </p>
+        </div>
+        <div class="box3">
+            <h3>나이</h3>
+            <p>
+                <input type="radio" name="age" value="10">10대</input><br />
+                <input type="radio" name="age" value="20">20대</input><br />
+                <input type="radio" name="age" value="30">30대</input><br />
+                <input type="radio" name="age" value="40">40대</input><br />
+                <input type="radio" name="age" value="50">50대</input><br />
+                <input type="radio" name="age" value="60">60대 이상</input>
+            </p>
+        </div>
+        <div class="box4">
+            <h3>설문조사 카테고리</h3>
+            <select name="languages" id="lang">
+                <option value="so">사회</option>
+                <option value="sp">스포츠</option>
+                <option value="en">연예</option>
+            </select>
+        </div>
+        <div class="box5">
+            <h3>원하는 강의(복수응답가능합니다.)</h3>
+            <p>
+                <input type="checkbox">html</input>
+                <input type="checkbox">javascript</input>
+                <input type="checkbox">css</input>
+            </p>
+        </div>
+        <div class="box6">
+            <textarea rows="10" cols="65">하고 싶은 말을 써주세요</textarea><br />
+            <input type="button" value="제출" />
+        </div>   
+    </div>
+</body>
+</html>

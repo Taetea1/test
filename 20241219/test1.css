@@ -1,0 +1,27 @@
+/* .fruits span:first-child {
+    color: red;
+}
+.fruits div:first-child {
+    color: blue;
+}
+.fruits h3:last-child {
+    color: red;
+}
+.toma {
+    color: green;
+}
+ .fruits *:nth-child(2) {
+     color: red;
+ }
+ .fruits *:nth-child(4) {
+    color: red;
+}
+.fruits *:nth-child(2n) {
+    color: red;
+}
+.fruits *:nth-child(2n + 1) {
+    color: blue;
+} */
+.fruits *:not(span) {
+    color: red;
+}
