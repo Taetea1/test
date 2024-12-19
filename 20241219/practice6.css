@@ -1,0 +1,172 @@
+.boxWrap {
+    background-color: beige;
+    height: 100vh;
+    min-height: fit-content;
+}
+/* 설문조사 */
+.box1{
+    font-family: "Gamja Flower", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    border-top: 18px solid rgb(230, 200, 163);
+    /* width: 500px; */
+    background-color: white;
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 600px;
+    
+}
+.txt{
+    font-family: "Gamja Flower", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    padding: 15px 0px 3px 3px;
+    border-width: 0px 0px 1px 0px;
+}
+.txt:focus{
+    outline: none;
+    border-bottom: 3px solid rgb(230, 200, 163);
+}
+/* 이름 이메일 */
+.box2 {
+    font-family: "Yeon Sung", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    /* width: 500px; */
+    background-color: white;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 10px solid rgb(239, 215, 183);
+    max-width: 600px;
+}
+
+
+/* .box2:focus-within{
+    border-left: 8px solid rgb(239, 215, 183);
+    box-shadow: 0px 0px 5px 5px #ccc;
+} */
+/* 나이 */
+.box3 {
+    font-family: "Yeon Sung", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    /* width: 500px; */
+    background-color: white;
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 8px solid rgb(239, 215, 183);
+    max-width: 600px;
+}
+/* .box3:focus-within{
+    border-left: 8px solid rgb(239, 215, 183);
+    box-shadow: 0px 0px 5px 5px #ccc;
+} */
+/* 설문조사 카테고리 */
+.box4 {
+    font-family: "Yeon Sung", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    /* width: 500px; */
+    background-color: white;
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 8px solid rgb(239, 215, 183);
+    max-width: 600px;
+}
+.txt2{
+    font-family: "Gamja Flower", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    padding: 15px 0px 3px 3px;
+    border-width: 0px 0px 1px 0px;
+}
+.txt2:focus{
+    outline: none;
+}
+.txt2:hover{
+    cursor: pointer;
+}
+/* .box4:focus-within{
+    border-left: 8px solid rgb(239, 215, 183);
+    box-shadow: 0px 0px 5px 5px #ccc;
+} */
+/* 원하는 강의 */
+.box5 {
+    font-family: "Yeon Sung", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 18px;
+    /* width: 500px; */
+    background-color: white;
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 8px solid rgb(239, 215, 183);
+    max-width: 600px;
+}
+/* .box5:focus-within{
+    border-left: 8px solid rgb(239, 215, 183);
+    box-shadow: 0px 0px 5px 5px #ccc;
+} */
+/* 하고 싶은 말 */
+.box6 {
+    font-family: "Gamja Flower", serif;
+    font-weight: 400;
+    font-style: normal;
+    
+    /* width: 500px; */
+    background-color: white;
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 8px solid rgb(239, 215, 183);
+    max-width: 600px;
+}
+/* .box6:focus-within{
+    border-left: 8px solid rgb(239, 215, 183);
+    box-shadow: 0px 0px 5px 5px #ccc;
+} */
+
+/* 버튼 오른쪽 정렬 */
+.box6{
+    text-align: right;
+}
+.btn{
+    font-family: "Gamja Flower", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    padding: 10px 30px;
+    color: white;
+    background-color: rgb(143, 99, 99);
+    border-radius: 5px;
+    border: none;
+    
+}
+.btn:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+/* textarea 커스텀 */
+.textarea_custom{
+    font-family: "Gamja Flower", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    width: 100%;
+    height: 140px;
+    display: flex;
+    margin: 0px auto;
+    overflow: scroll;
+    
+}
