@@ -1,0 +1,36 @@
+.container{
+    width: 600px;
+    height: 600px;
+    border: 1px solid;
+    /* absolute쓰려면 부모는 relative */
+    position: relative; 
+}
+.item{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+.item1{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    position: relative;
+    left: 50px;
+    top: 30px;
+}
+.item2{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    position: absolute;
+    right: 30px;
+    bottom: 100px;
+}
+.item3{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    position: fixed;
+    right: 100px;
+    top: 100px;
+}

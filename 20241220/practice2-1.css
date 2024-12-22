@@ -1,0 +1,210 @@
+.parent{
+    position: relative;
+}
+/* 얼굴 */
+.circle{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+}
+/* 꼬리 */
+.circletail{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+}
+/* 다리 */
+.leg{
+    width: 15px;
+    height: 60px;
+    position: absolute;
+}
+/* 눈 */
+.eye{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute; 
+}
+/* 눈동자 */
+.eyedot{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    
+}
+
+
+/* 빨간얼굴 */
+.circle1{
+    background-color: red;
+    top: 120px;
+    left: 0px;
+}
+.eye1{
+    z-index: 10;
+    top: 140px;
+    left: 20px;
+    background-color: white;
+}
+.eye1-1{
+    z-index: 15;
+    top: 145px;
+    left: 20px;
+    background-color: black;
+}
+/* 빨간얼굴 */
+
+/* 주황얼굴 */
+.circle2{
+    background-color: orange;
+    top: 160px;
+    left: 50px;
+    z-index: 4;
+}
+.eye2{
+    z-index: 10;
+    top: 190px;
+    left: 70px;
+    background-color: white;
+}
+.eye2-1{
+    z-index: 15;
+    top: 190px;
+    left: 80px;
+    background-color: black;
+}
+.leg1{
+    background-color: black;
+    top: 230px;
+    left: 90px;
+}
+/* 주황얼굴 */
+
+/* 노란얼굴 */
+.circle3{
+    background-color: yellow;
+    top: 200px;
+    left: 120px;
+    z-index: 2;
+}
+.eye3{
+    z-index: 10;
+    top: 250px;
+    left: 150px;
+    background-color: white;
+}
+.eye3-1{
+    z-index: 15;
+    top: 260px;
+    left: 150px;
+    background-color: black;
+}
+.leg2{
+    background-color: black;
+    top: 270px;
+    left: 160px;
+}
+/* 노란얼굴 */
+
+/* 초록얼굴 */
+.circle4{
+    background-color: green;
+    top: 200px;
+    left: 190px;
+    z-index: 4;
+}
+.eye4{
+    z-index: 10;
+    top: 202px;
+    left: 225px;
+    background-color: white;
+}
+.eye4-1{
+    z-index: 15;
+    top: 202px;
+    left: 230px;
+    background-color: black;
+}
+.leg3{
+    background-color: black;
+    top: 270px;
+    left: 230px;
+}
+/* 초록얼굴 */
+
+/* 남색얼굴 */
+.circle5{
+    background-color: navy;
+    top: 240px;
+    left: 250px;
+    z-index: 2;
+}
+.eye5{
+    z-index: 10;
+    top: 270px;
+    left: 285px;
+    background-color: white;
+}
+.eye5-1{
+    z-index: 15;
+    top: 280px;
+    left: 300px;
+    background-color: black;
+}
+.leg4{
+    background-color: black;
+    top: 310px;
+    left: 290px;
+}
+/* 남색얼굴 */
+
+/* 보라얼굴 */
+.circle6{
+    background-color: purple;
+    top: 200px;
+    left: 330px;
+    z-index: 4;
+}
+.eye6{
+    z-index: 10;
+    top: 230px;
+    left: 365px;
+    background-color: white;
+}
+.eye6-1{
+    z-index: 15;
+    top: 240px;
+    left: 380px;
+    background-color: black;
+}
+/* 보라얼굴 */
+
+
+/* 꼬리들 */
+.c1{
+    background-color: green;
+    top: 150px;
+    left: 450px;
+    z-index: 4;
+}
+.c2{
+    background-color: yellow;
+    top: 170px;
+    left: 435px;
+}
+.c3{
+    background-color: orange;
+    top: 185px;
+    left: 418px;
+    z-index: 4;
+}
+.c4{
+    background-color: red;
+    top: 200px;
+    left: 400px;
+}
+/* 꼬리들 */

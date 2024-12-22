@@ -1,0 +1,173 @@
+body{
+    height: 2000px;
+}
+.container{
+    width: 500px;
+    height: 500px;
+    border: 5px solid;
+    position: relative;
+}
+
+/* 고정 */
+.box{
+    width: 200px;
+    height: 200px;
+    left: 517px;
+    top: 8px;
+    border: 2px solid;
+    position: fixed;
+}
+.t1{
+    background-color: black;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    width: 50px;
+    height: 150px;
+}
+.t2{
+    background-color: black;
+    position: absolute;
+    bottom: 20px;
+    left: 70px;
+    width: 100px;
+    height: 50px;
+}
+/* 고정 */
+
+/* 보라색 */
+.tet1{
+    background-color: purple;
+    position: absolute;
+    bottom: 0px;
+    width: 150px;
+    height: 50px;
+}
+.tet1-1{
+    background-color: purple;
+    position: absolute;
+    bottom: 50px;
+    width: 50px;
+    height: 100px;
+}
+/* 보라색 */
+
+/* 빨강색 */
+.tet2{
+    background-color: red;
+    position: absolute;
+    bottom: 0px;
+    left: 150px;
+    width: 50px;
+    height: 50px;
+}
+.tet2-1{
+    background-color: red;
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    width: 250px;
+    height: 50px;
+}
+/* 빨강색 */
+
+/* 주황색 */
+.tet3{
+    background-color: orange;
+    position: absolute;
+    bottom: 0px;
+    left: 200px;
+    width: 300px;
+    height: 50px;
+}
+.tet3-1{
+    background-color: skyblue;
+    position: absolute;
+    bottom: 0px;
+    left: 300px;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+}
+.tet3-2{
+    background-color: skyblue;
+    position: absolute;
+    bottom: 0px;
+    left: 400px;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+}
+/* 주황색 */
+
+/* 검은색 */
+.tet4{
+    background-color: black;
+    position: absolute;
+    bottom: 150px;
+    left: 150px;
+    width: 50px;
+    height: 100px;
+}
+.tet4-1{
+    background-color: black;
+    position: absolute;
+    bottom: 200px;
+    left: 50px;
+    width: 100px;
+    height: 50px;
+}
+
+.tet4-2{
+    background-color: black;
+    position: absolute;
+    bottom: 300px;
+    left: 10px;
+    width: 250px;
+    height: 50px;
+}
+.tet4-3{
+    background-color: black;
+    position: absolute;
+    bottom: 340px;
+    left: 60px;
+    width: 50px;
+    height: 150px;
+}
+.tet4-4{
+    background-color: black;
+    position: absolute;
+    bottom: 470px;
+    top: 10px;
+    left: 110px;
+    width: 50px;
+    height: 50px;
+}
+
+.tet4-5{
+    background-color: black;
+    position: absolute;
+    top: 50px;
+    left: 200px;
+    width: 250px;
+    height: 50px;
+}
+.tet4-6{
+    background-color: black;
+    position: absolute;
+    top: 100px;
+    right: 150px;
+    width: 50px;
+    height: 150px;
+}
+.tet4-7{
+    background-color: black;
+    position: absolute;
+    top: 200px;
+    right: 50px;
+    width: 100px;
+    height: 50px;
+}
+/* 검은색 */
+
+

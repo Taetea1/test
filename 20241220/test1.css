@@ -1,0 +1,60 @@
+/* .box1{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: red;
+}
+.box2{
+    position: relative;
+    top: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border-radius: 50%;
+}
+.box3{
+    position: relative;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50%;
+} */
+
+.box1{
+    position: relative;
+    background-color: red;
+}
+.btn{
+    position: absolute;
+    width: 50px;
+    padding: 5px 10px;
+    /* top: -5px;
+    right: 50px; */
+    /* background-color: aqua; */
+    text-align: center;
+    border-radius: 5px;
+    font-size: 10px;
+}
+.b1{
+    /* 자리유지 */
+    background-color: red;
+}
+.b2{
+    left: 20px;
+    background-color: orange;
+}
+.b3{
+    left: 40px;
+    background-color: yellow;
+    z-index: 1;
+}
+.b4{
+    left: 60px;
+    background-color: green;
+}
+.b5{
+    left: 80px;
+    background-color: blue;
+}
