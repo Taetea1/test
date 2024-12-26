@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    const number = 123;
+    const Str = "123";
+    const any = number + Str;
+    console.log(String(number));
+    console.log(Number(Str));
+    console.log(number + Str, "뭐야!");//결과: 123123
+    console.log(typeof any); //숫자+문자 -> 문자열
+
+
+    let mathScore = prompt("수학 점수를 입력하세요.");
+    let engScore = prompt("영어 점수를 입력하세요.");
+    let avg = (Number(mathScore) + Number(engScore)) / 2;
+    console.log(avg);
+    //결과가 이거라면 nan->뭔지 모른다
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

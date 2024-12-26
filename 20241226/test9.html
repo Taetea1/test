@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    //함수는 실행시켜줘야 실행됨
+    //매개변수로 한가지 함수로 여러개의 행동가능해짐
+    const sayHello = (name, age) => {
+      //name = '남생이'
+      console.log(name);
+      console.log(age);
+
+      console.log(`제 이름은 ${name}입니다. 나이는 ${age}입니다.`);
+
+    }
+
+  </script>
+</head>
+
+<body>
+  <!-- 태그가 있으면 onclick은 어디서든 사용가능 -->
+  <button onclick="sayHello('남생이', 10)">눌러!</button>
+  <button onclick="sayHello('김밥', 15)">눌러2</button>
+</body>
+
+</html>

@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="test1.css" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +14,144 @@
 </head>
 
 <body>
+  <div class="boxwrap">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col" class="table-secondary">
+            <h3>구분</h3>
+          </th>
+          <th scope="col" class="table-secondary">
+            <h3>음료</h3>
+          </th>
+          <th scope="col" class="table-secondary">
+            <h3>가격</h3>
+          </th>
+          <th scope="col" class="table-secondary">
+            <h3>이미지</h3>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row" rowspan="2">
+            <h4>커피류</h4>
+          </th>
+          <td>
+            <h4>아메리카노</h4>
 
+          </td>
+          <td>
+            <h4>4200원</h4>
+          </td>
+          <td>
+            <img
+              src="https://i.namu.wiki/i/RFyDPqq4-g9e8jPuAosGX89x6nkjLnXWJo0pXuLFbTcFn_tK2IXs_-X3kEsZT0sQnYCjZll5Ti7H7eeZVDpeSJPJZjILWJU7gOWirgwefEk84vHxFO-B7Pa7qH-mKS6dGy50AqrSzYUir5DGzpBcnQ.webp"
+              alt="ame" class="imgsize" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h4>돌체라떼</h4>
+
+          </td>
+          <td>
+            <h4>4800원</h4>
+          </td>
+          <td>
+            <img
+              src="https://i.namu.wiki/i/h3zmi-A_gvNQJFTJbv3Rryqwq7VUlMHi6tfNVInr0356tJGtcGG11dLzTuVJ8pLXRPuH6-yOfx1Tr2-nJz1nJq79-QLydsx8JEZ2bp6MSMmOCVhmAAZTINkAnZ9xe_zadsrok22Op5z5wqnPoBKgVQ.webp"
+              alt="dol" class="imgsize" />
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" rowspan="2">주스류</th>
+          <td>
+            <h4>자바칩 프라푸치노</h4>
+
+          </td>
+          <td>
+            <h4>5000원</h4>
+          </td>
+          <td>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAt4afQ5xBK8BsrLlzc-Q4LAE0WZRKQpfALA&s"
+              alt="java" class="imgsize" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h6>
+              <h4>녹차 푸라포치노</h4> <span class="badge text-bg-secondary">New</span>
+
+
+            </h6>
+          </td>
+          <td>
+            <h4>5000원</h4>
+          </td>
+          <td>
+            <img src="https://img.insight.co.kr/static/2019/04/07/700/1gv768hqvpu88qkf720q.jpg" alt="noc"
+              class="imgsize" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            아메리카노 설명
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            커피의 일종인 에스프레소에 뜨거운 물을 희석시켜 만든 음료이다.<br />Caffé Americano라는 단어를 해석하자면 <i>'미국식 커피'</i>로,
+            미국인들이 '유럽에 비해 옅은 농도의 커피를 선호한다고 하여 '물 탄 에스프레소'를 이렇게 부르게 되었다. 다만 실제로 미국인들이 가장
+            선호하는 블랙커피는 배치 브루(스타벅스에서 '오늘의 커피'로 판매하는 바로 그것)이며, 아메리카노(혹은 롱 블랙)를 정말 좋아하는 나라는 한국과 호주이다.
+            에스프레소보다는 농도가 연하고 양이 많다는 이유로 카페 룽고(Caffé Lungo; 줄여서 룽고)와 혼동할 수 있지만, 서로 다른 커피이다.
+
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            돌체 라떼 설명
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            돌체 라떼(Dolce Latte)는 연유와 우유, 에스프레소 샷을 섞어 만든 카페라테의 일종이다.<br />
+            스타벅스에서 2013년 5월부터 판매한 음료였다. 풀네임은 스타벅스 돌체 라떼(Starbucks Dolce Latte)로 주문 라벨에는 이니셜인 SDL로 통용되고 있다.
+            2013년 봄 시즌에 처음 출시되었고 프로모션 음료로 나왔다가 한동안 단종되었다. 그러나 스타벅스 코리아의 매출에서 높은 비중을 차지한 나머지 2014년
+            봄 시즌부터 고정 메뉴로 재출시되어 지금까지도 스타벅스의 베스트셀러 음료로 인정받고 있다. 지금은 다른 브랜드에서도 돌체 라떼라는 이름으로 많이들 판매하고 있다.
+
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            자바칩 프로푸치노 설명
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            커피 프라푸치노에 초콜릿, 초콜릿 칩이 첨가된 아이스 블렌드로 달콤 아삭한 음료이다.<br />
+            라이트 프라푸치노용 시럽 선택 가능하다. Tall 사이즈 기준, 25%이상 줄어든 저당(Low Sugar)으로 즐길 수 있다.
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+  </div>
 </body>
 
 </html>
