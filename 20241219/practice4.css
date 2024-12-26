@@ -1,23 +1,23 @@
-.boxWrap{
-    display: flex;
-    width: auto;
-    height: 200px;
-    background-color: orange;
+.boxWrap {
+  display: flex;
+  width: auto;
+  height: 200px;
+  background-color: orange;
 }
-.box1{
-    width: 200px;
-    height: 100px;
-    background-color:skyblue;
+.box1 {
+  width: 200px;
+  height: 100px;
+  background-color: skyblue;
 }
-.box2{
-    width: 200px;
-    height: 100px;
-    background-color:green;
-    margin-left: 30px;
-    margin-right: 30px;
+.box2 {
+  width: 200px;
+  height: 100px;
+  background-color: green;
+  margin-left: 30px;
+  margin-right: 30px;
 }
-.box3{
-    width: 200px;
-    height: 100px;
-    background-color:red;
+.box3 {
+  width: 200px;
+  height: 100px;
+  background-color: red;
 }

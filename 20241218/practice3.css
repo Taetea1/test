@@ -1,21 +1,21 @@
-p.lion{
-    background-color: red;
+p.lion {
+  background-color: red;
 }
-ul .lion{
-    background-color: greenyellow;
+ul .lion {
+  background-color: greenyellow;
 }
-#tiger{
-    background-color: yellow;
+#tiger {
+  background-color: yellow;
 }
-.lion{
-    color: sienna;
+.lion {
+  color: sienna;
 }
-div .lion{
-    font-weight: bold;
+div .lion {
+  font-weight: bold;
 }
-#tiger + li{
-    background-color: skyblue;
+#tiger + li {
+  background-color: skyblue;
 }
-li.lion ~ li{
-    background-color: orange;
+li.lion ~ li {
+  background-color: orange;
 }

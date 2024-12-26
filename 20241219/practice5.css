@@ -1,16 +1,16 @@
-.boxWrap{
-    background-color: beige;
+.boxWrap {
+  background-color: beige;
 }
-.box{
-    width: 100px;
-    height: 100px;
-    background-color: blue;
-    color: white;
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  color: white;
 
-    /* div를 가운데로 정렬렬 */
-    margin: auto;
+  /* div를 가운데로 정렬렬 */
+  margin: auto;
 
-    /* 텍스트를 가운데로 정렬하는 방법 */
-    text-align: center;
-    line-height: 100px;
+  /* 텍스트를 가운데로 정렬하는 방법 */
+  text-align: center;
+  line-height: 100px;
 }

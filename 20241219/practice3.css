@@ -1,9 +1,9 @@
-[disabled]{
-    background-color: red;
+[disabled] {
+  background-color: red;
 }
-[placeholder="이름"]{
-    background-color: orange;
+[placeholder="이름"] {
+  background-color: orange;
 }
-[placeholder=""]{
-    background-color: blue;
+[placeholder=""] {
+  background-color: blue;
 }

@@ -23,5 +23,5 @@
     color: blue;
 } */
 .fruits *:not(span) {
-    color: red;
+  color: red;
 }

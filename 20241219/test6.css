@@ -1,21 +1,19 @@
-
-.box{
-    width: 100px;
-    height: 100px;
-    background-color:beige;
-    /* border-left: 1px solid red;
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: beige;
+  /* border-left: 1px solid red;
     border-right: 1px solid red; */
-    /* border-top: 1px solid red; */
+  /* border-top: 1px solid red; */
 
-    /* 둥글하게 */
-    border-radius: 0px 0px 10px 0px;
-
+  /* 둥글하게 */
+  border-radius: 0px 0px 10px 0px;
 }
-img{
-    /* 완전 동그랗게 하려면 너비 넢이가 같아야함 */
-    width: 50px;
-    height: 50px;
+img {
+  /* 완전 동그랗게 하려면 너비 넢이가 같아야함 */
+  width: 50px;
+  height: 50px;
 
-    /* 아예 동그랗게 주려면 50%를 주면 됨 */
-    border-radius: 50%;
+  /* 아예 동그랗게 주려면 50%를 주면 됨 */
+  border-radius: 50%;
 }

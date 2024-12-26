@@ -1,35 +1,35 @@
-body{
-    color: white;
-    background-color: gray;
+body {
+  color: white;
+  background-color: gray;
 }
-div{
-    background-color: red;
+div {
+  background-color: red;
 }
-#f{
-    background-color: blue;
+#f {
+  background-color: blue;
 }
-.s{
-    background-color: green;
+.s {
+  background-color: green;
 }
 
-.first{
-    color:red;
+.first {
+  color: red;
 }
-.second{
-    color:orange;
+.second {
+  color: orange;
 }
-.third{
-    color:yellow;
+.third {
+  color: yellow;
 }
-.four{
-    color:green;
+.four {
+  color: green;
 }
-.five{
-    color:blue;
+.five {
+  color: blue;
 }
-.six{
-    color:navy;
+.six {
+  color: navy;
 }
-.seven{
-    color:purple;
+.seven {
+  color: purple;
 }

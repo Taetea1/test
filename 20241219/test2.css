@@ -1,6 +1,6 @@
-.box::before{
-    content: "앞!";
+.box::before {
+  content: "앞!";
 }
-.box::after{
-    content: "뒤!";
+.box::after {
+  content: "뒤!";
 }

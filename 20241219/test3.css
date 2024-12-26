@@ -7,9 +7,9 @@
 [value="HEROPY"]{
     color: blue;
 } */
- .test{
-    /* 폰트패밀리에 내가 사용할 폰트 넣어주기*/
-    font-family: "Playwrite ES Deco Guides", serif;
-    font-weight: 400;
-    font-style: normal;
- }
+.test {
+  /* 폰트패밀리에 내가 사용할 폰트 넣어주기*/
+  font-family: "Playwrite ES Deco Guides", serif;
+  font-weight: 400;
+  font-style: normal;
+}

@@ -1,27 +1,27 @@
-.boxWrap{
-    display: flex;
+.boxWrap {
+  display: flex;
 }
 
-.box{
-    background-color: green;
-    width: 100px;
-    height: 100px;
-    padding: 10px;
+.box {
+  background-color: green;
+  width: 100px;
+  height: 100px;
+  padding: 10px;
 }
-.box2{
-    background-color: blue;
-    width: 100px;
-    height: 100px;
+.box2 {
+  background-color: blue;
+  width: 100px;
+  height: 100px;
 
-    /* 전부 적용 padding도 동일함함 */
-    margin: 10px;
+  /* 전부 적용 padding도 동일함함 */
+  margin: 10px;
 
-    /* 상하, 좌우 */
-    margin: 10px 20px;
+  /* 상하, 좌우 */
+  margin: 10px 20px;
 
-    /* 상,우,하,좌 */
-    margin: 10px 10px 10px 10px;
+  /* 상,우,하,좌 */
+  margin: 10px 10px 10px 10px;
 
-    /* css에서는 ;필수, 좌만 넣고 싶을 때 */
-    margin-left: 10px;
+  /* css에서는 ;필수, 좌만 넣고 싶을 때 */
+  margin-left: 10px;
 }
