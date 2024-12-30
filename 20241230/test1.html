@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // if문
+    const number = 18;
+    if (number >= 20) { // 조건1
+      // 조건1이 참이라면 실행
+      console.log("성인입니다.");
+    } else {
+      // 조건1이 거짓이라면 실행
+      console.log("미성년자입니다.");
+    }
+
+    const str = "admin";
+    if (str === "admin") {  // 조건1
+      console.log("관리자입니다.");
+    } else if (str === "user") {  // 조건2
+      // 조건1을 만족하지 않고, 조건2를 만족할 경우에 실행
+      console.log("회원입니다.");
+    } else {
+      // 조건1을 만족하지 않고, 조건2를 만족하지 않은 경우에 실행
+      console.log("비회원입니다.");
+    }
+    //else는 앞의 if의 반대되는 거(그래서 else나 else if는 없애도 오류가 안 나지만, if를 없애면 오류)
+
+    if (number >= 20) {
+      // number가 18이기 때문에 이 줄은 읽지 않고 넘어간다.
+      if (str === "user") {
+        console.log("성인 회원입니다.");
+      }
+      console.log("성인 비회원입니다.");
+    } else {
+      console.log("미성년자입니다.");
+    }
+
+    //뎁스(if)가 분기를 계속 나오면 지저분해짐(클린코드로 만들기 위해 중첩된if문을 따로 함수로 빼서 두거나 if를 잘 생각해서 두기)
+
+
+
+    // switch 문 -> break를 만나기 전까지 읽음
+    switch (str) {
+      case "admin": //str === "admin"
+        console.log("관리자 입니다.");
+      // break;
+      case "user": //str === "user"
+        console.log("회원 입니다.");
+        break;
+      case "aaa": //str === "aaa"
+      case "bbb": //str === "bbb"
+        console.log("test 입니다.");
+        break;
+      default:   //이 외의 모든 것들(선택사항)
+        console.log("비회원 입니다.");
+        break;
+    }
+
+
+    //if문을 간단하게 표현하는 명령어(if와 else 하나일경우->안에도 하나의 명령어)
+    // 조건 ? 참일 경우 실행할 명령어(명령어1개) : 거짓일 경우 실행할 명령어(명령어 1개)
+    number >= 20 ? console.log("성인입니다.") : console.log("미성년자입니다.");
+  </script>
+</body>
+
+</html>
