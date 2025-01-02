@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM 1,2번</title>
+</head>
+
+<body>
+  <!-- before() -->
+  <!-- <p>본문입니다.</p> -->
+  <div id="container">
+    <!-- prepend() -->
+    <!-- <p>본문입니다.</p> -->
+    <h3>제목입니다.</h3>
+    <!-- js로 아래 태그를 추가하고 싶다. -->
+    <!-- append(), appendChild() -->
+    <!-- <p>본문입니다.</p> -->
+  </div>
+  <!-- after() -->
+  <!-- <p>본문입니다.</p> -->
+
+
+
+
+
+
+
+  <div id="container2">
+    <h3>제목입니다2</h3>
+  </div>
+
+
+
+
+
+
+
+  <script>
+    const container = document.getElementById("container");
+
+    // container.innerHTML = '<h3>제목입니다.</h3> <p>본문입니다.</p>'
+    // container.innerHTML += '<p>본문입니다.</p>'
+
+
+
+    //1. p 태그를 만든다.
+    const p = document.createElement('p')  //<p></p>
+    //2. p 태그 내부에 원하는 텍스트를 작성한다.
+    p.innerText = "본문입니다." //<p>본문입니다.</p>
+    //3. container 내부(마지막)에 p 태그를 추가한다.
+    // container.append(p)  //여러개의 요소 및 문자열을 인자로 받을 수 있음
+    // container.appendChild(p)  //하나의 요소(Element)만 인자로 받을 수 있음(문자열 안됨)
+
+
+    // const p2 = document.createElement('p');
+    // p2.innerText = '본문입니다.2'
+    // container.append(p, p2, '문자열도 추가됨')
+
+
+    // container.prepend(p); //container의 내부(첫번째)에 요소 추가. 함수 형태는 append와 동일
+
+
+    // container.before(p) //container의 이전 형제 요소로 추가됨. 함수 형태는 append와 동일
+
+
+    container.after(p) //container의 다음 형제 요소로 추가됨. 함수 형태는 append와 동일
+
+
+
+    //삭제 메서드: remove(), removeChild()
+    const container2 = document.getElementById("container2")
+    const h3 = document.querySelector("#container2 > h3")
+
+    // h3.remove() //h3 요소를 삭제함
+    // container2.removeChild(h3) // container2 자식 중에서 h3에 해당하는 자식을 삭제함
+
+    container2.innerHTML = '' //container2안의 모든 내용 삭제
+
+
+  </script>
+</body>
+
+</html>

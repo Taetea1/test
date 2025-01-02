@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열 관련 메소드</title>
+</head>
+
+<body>
+  <script>
+    let days = ['월', '화', '수'];
+    days.push('목'); //배열의 가장 마지막에 원소 추가
+    console.log(days);  //days 자체가 바뀌어서 ['월', '화', '수', '목']
+
+    //['월', '화', '수', '목']
+    days.pop(); //배열의 마지막 원소를 제거하는 함수
+    console.log(days);
+
+    //['월', '화', '수']
+    days.unshift('일'); // 배열의 첫번째에 원소를 추가하는 함수
+    console.log(days); //['일', '월', '화', '수']
+
+    //['일', '월', '화', '수']
+    days.shift(); //배열의 첫번째 원소를 제거하는 함수
+    console.log(days);  //['월', '화', '수']
+
+    let numbers = [1, 2, 3, 4, 5, 6, 3]; //includes는 불린을 반환하는 함수
+    console.log(numbers.includes(3)); //포함되어있으니 true
+    console.log(numbers.includes(7)); //포함되어있지 않으니 false
+
+
+    const str4 = "abcd";
+    console.log(str4.includes('a')); //true
+    console.log(str4.includes('e'));  //false
+    console.log(str4.includes('ab')); //true
+    console.log(str4.includes('abd')); //false
+
+
+
+
+
+
+
+
+    // numbers.length  //배열의 길이 반환 -> 6
+    console.log(numbers.indexOf(3)); //처음만난 인덱스 2반환
+
+
+
+    // numbers.reverse();
+    const numbers2 = numbers.reverse();//원형도 변경하고, 값도 반환한다.
+    console.log(numbers);
+    console.log(numbers2);
+
+
+    const str4Split = str4.split(''); //['a','b','c','d']
+    console.log(str4Split.join('-')); //join의 반환값은 string -> 원소하나하나 사이에 데쉬를 넣어서 string으로 반환
+  </script>
+</body>
+
+</html>

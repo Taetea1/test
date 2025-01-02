@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반복문</title>
+</head>
+
+<body>
+  <script>
+    // 반복문(for(for of/in), while(do/while))
+    // for (초기화문; 조건문; 증감문) {// 얼마나 반복할 것인가?
+    //   // 반복하고 싶은 명령어
+
+    // }
+
+    for (let i = 0; i < 10; i++) {  //(i 변수 초기화(0) ; i가 10보다 작을 때까지 ; i를 1씩 증가)
+      //"안녕하세요" 10번 출력하기
+      console.log(i + "번째 안녕하세요");  //반복하고자 하는 명령문
+
+      c();
+    }
+
+    function c() {
+      //이중for문(반복문도 마찬가지로 반복문의 뎁스가 깊어지면 좋지 않은 코드)
+      for (let j = 0; j < 5; j++) {
+        console.log("안쪽 반복문:", j);
+        // for (let k = 0; k < 5; k++) {
+        //세번까지 나온다면 문제가 있다...(두번도 안 좋긴 하지만-> 함수로 빼서 쓰기)
+        // }
+      }
+    }
+
+
+
+
+
+    for (let i = 1; i <= 10; i++) {
+
+    }
+
+    for (let i = 10; i > 0; i--) {
+
+    }
+
+    for (let i = 10; i > 0; i = i - 2) {
+      console.log("-2씩 감소:", i);
+    }
+
+    for (let i = 0; i < 10; i = i + 3) {
+      console.log("3씩 증가:", i);
+    }
+
+
+
+
+
+
+
+
+    //for vs while
+    //for : 반복되는 횟수를 구조적으로 지정하고 코드를 짜게 됨
+    //while : 주로 반복되는 횟수를 모를 때 사용
+
+    //while 문
+    // while (조건문) {}
+    // while (true) {  //무한 루프
+    //   if () {
+    //     break;
+    //   }
+    // }
+
+    let i = 0; //초기화
+    while (i < 10) {  //조건문
+      console.log(i + "번째 안녕하세요."); //반복하고자하는 명령문
+      i++ //증감문
+    }
+
+
+
+
+    //1번 방법(코드가 반복되지도 않고 잘 읽히는 편이라 이 코드가 더 좋은 코드)
+    while (true) {//무한루프
+      let number = Number(prompt("어떤 게임을 할지 골라주세요. 1) 묵찌빠 2) 딱지치기 3) 무궁화 꽃이 피었습니다 0) 종료"));
+
+      if (number === 0) {
+        break;
+      } else {
+        console.log(number, "번 게임을 선택하셨습니다.");
+      }
+    }
+
+    //2번 방법
+    let number = Number(prompt("어떤 게임을 할지 골라주세요. 1) 묵찌빠 2) 딱지치기 3) 무궁화 꽃이 피었습니다 0) 종료"));
+
+    while (number !== 0) {
+      console.log(number, "번 게임을 선택하셨습니다.");
+
+      number = Number(prompt("어떤 게임을 할지 골라주세요. 1) 묵찌빠 2) 딱지치기 3) 무궁화 꽃이 피었습니다 0) 종료"));
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //한번은 무조건 실행하게 되는 구조
+    do {
+      //반복할 명령어
+    } while (조건)
+
+
+    //일반 while문과의 차이점
+    //최초 한번을 무조건 do 안에있는 구문을 실행시키게 됨.
+    //그 이후부터는 while의 조건에 따라서 실행 여부 결정
+    let j = 10;//초기화
+    do {
+      console.log(j + "번재 안녕하세요.(do-while문)"); //반복하고자 하는 명령문
+      j++;
+    } while (j < 10);
+
+
+
+
+
+
+    //break; continue;
+    //반복문 내에서 많이 쓰이는 키워드 중 하나
+
+
+    for (let i = 1; i <= 10; i++) {
+      if (i % 3 === 0) {
+        break;  //이 순간에 반복문을 완전히 깬다.
+      }
+      console.log("break 확인:", i);
+    }
+
+
+    //짝수만 출력(이렇게 짜면 안 좋음)
+    for (let i = 0; i < 10; i++) {
+      if (i % 2 !== 0) {
+        continue; //이 순간에 다음 반복으로 넘긴다.
+      }
+      donsole.log(i);
+      //이 지점으로 넘긴다
+    }
+
+    //짝수만 출력할 때 이런식으로 짜기
+    for (let i = 0; i < 10; i++) {
+      if (i % 2 === 0) {
+        console.log(i);
+      }
+    }
+
+
+
+
+    //for문의 변형
+    //for-of : 배열의 반복에서 많이 쓰임
+
+    //배열 탐색할 때 많이 사용
+    const fruits = ["apple", "banana", "grapte", "melon"];
+    for (let i = 0; i < fruits.length; i++) {
+      console.log("for문", fruits[i]);
+      if (i % 2 === 0) { }
+    }
+
+
+    //for(const 변수이름(아무거나) of 존재하는(탐색하고자 하는) 배열)
+    for (const fruit of fruits) { //배열의 길이만큼 반복
+      //첫번째 반복 : fru = "apple"
+      //두번째 반복 : fru = "banana"
+      //세번째 반복 : fru = "grape"
+      // ...
+      console.log("for-of문", fruit);
+    }
+
+
+
+    //for-in
+    const object = { a: 1, b: 2, c: 3 };//속성: 속성값
+
+    //for(const 변수이름(아무거나) of 존재하는(탐색하고자 하는) 객체)
+    for (const property in object) {
+      //첫번째 : property="a"
+      //첫번째 : property="b"
+      //첫번째 : property="c"
+      console.log(`${property}: ${object[property]}`);
+    }
+
+  </script>
+</body>
+
+</html>

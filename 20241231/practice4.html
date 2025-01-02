@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>방명록</title>
+</head>
+
+<body>
+  <p>방명록입니다.</p>
+  <div>
+    <span>작성자</span>
+    <input type="text" id="user" />
+  </div>
+  <div>
+    <span>내용</span>
+    <input type="text" id="content" />
+  </div>
+  <br />
+  <div>
+    <button onclick="addComment()">작성</button>
+  </div>
+
+  <br />
+
+  <table border="1" cellspacing="0" cellpadding="10" id="table">
+    <tr>
+      <th>번호</th>
+      <th>작성자</th>
+      <th>내용</th>
+      <th>작성일</th>
+    </tr>
+  </table>
+
+  <script>
+    //번호에 사용할 변수 선언(전역 변수가 되어야 함)
+    let num = 1;
+    function addComment() {
+      const username = document.getElementById("user").value;
+      const contents = document.getElementById("content").value;
+
+      const table = document.getElementById("table"); //table가져오기
+
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = now.getMonth() + 1;
+      const date = now.getDate();
+      const hour = now.getHours();
+      const minutes = now.getMinutes();
+
+
+
+      const tr = document.createElement('tr');
+
+      const td1 = document.createElement('td');
+      const td2 = document.createElement('td');
+      const td3 = document.createElement('td');
+      const td4 = document.createElement('td');
+
+      //td 태그 내부에 텍스트0(번호, 작성자, 내용, 작성일) 추가
+      td1.innerText = num;
+      td2.innerText = username;
+      td3.innerText = contents;
+      td4.innerText = `${year}-${month}-${date} ${hour}:${minutes}`;
+
+
+      tr.append(td1);
+      tr.append(td2);
+      tr.append(td3);
+      tr.append(td4);
+
+      table.append(tr);
+
+      num++;
+
+      //초기화
+      document.getElementById("user").value = '';
+      document.getElementById("content").value = '';
+
+    }
+  </script>
+</body>
+
+</html>

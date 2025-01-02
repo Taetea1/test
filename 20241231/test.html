@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메소드 체이닝</title>
+</head>
+
+<body>
+
+  <!-- 메소드 체이닝: 메소드를 계속 연결해서 사용하는 것 -->
+  <script>
+    const hello = 'hello';
+    console.log(hello.split('').reverse().join('').toUpperCase());// '' -> 빈문자열
+    //hello.split('') => ['h','e','l','l','o']
+    //hello.split('').reverse() => ['o','l','l','e','h']
+    //hello.split('').reverse().join('') => 'olleh'
+    //hello.split('').reverse().join('').toUpperCase() => 'OLLEH'
+
+
+  </script>
+
+</body>
+
+</html>

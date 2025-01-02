@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let numbers = [1, 2, 3, 4, 5, 6];
+    let fruits = ['사과', '바나나', '수박', '포도', '파인애플'];
+
+
+    //callback 함수라고 함: 함수의 인자로 함수를 넘겨줄 수 있구나!
+    //fruits.forEach(/*파라미터로 함수를 넣음(인자로 함수를 넘겨줌)*/()=>{})
+    //fruits.forEach(function(){})
+
+
+
+    // forEach: 배열을 탐색할 수 있도록 도와주는 함수
+    /*fruits 안에 있는 원소 하나씩,인덱스(선택),앞에서 사용하고 있는 배열(선택)*/
+    fruits.forEach((fruit, i, arr) => {
+      console.log(fruit, i, arr);
+    });//반환값이 없음(void)
+
+    // fruits.forEach(function(fruit, i, arr) {
+    //   console.log(fruit, i, arr);
+    // }); //이렇게도 가능
+
+    // fruits.forEach((fruit, i) => {
+    //   console.log(fruit, i);
+    // }); //이렇게도 가능
+
+
+    //filter: 배열에 사용하는 메서드. 배열을 탐색하면서 원하는 조건(함수의 리턴값에 작성)에 부합하는 원소만 반환을 하는 함수
+    //반환값은 배열(조건에 부합하는 원소만 모아놓은 배열)
+    //return 뒤에 조건을 작성하면 됨.
+    const filteredArr = numbers.filter((num, i, arr) => { return num % 2 === 0 });
+    console.log("filteredArr", filteredArr);
+    console.log(numbers); //filter은 배열의 원형을 바꾸지 않음
+
+
+    const filteredArr2 = numbers.filter((num) => num % 2 === 0);  //중괄호와 return 생략 가능
+    console.log("filteredArr2", filteredArr2);
+
+    const isOdd = (num) => {
+      return num % 2 === 1;
+    }
+    //-> 줄이면(중관호와 return 생략 가능)/근데 만약 두줄이상이라면 못 줄임
+    const isOdd2 = (num) => num % 2 === 1;
+
+    console.log(isOdd(5), isOdd2(5)); //둘다true 출력
+
+
+
+  </script>
+
+</body>
+
+</html>

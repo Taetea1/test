@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문자열 관련 메소드</title>
+</head>
+
+<body>
+  <script>
+    //여기에 나온 함수들은 str을 이용해 함수의 동작을 함(원형을 바꾸지 않고 행동을 한 결과값을 반환함-> 바뀐값을 얻으려면 변수에 넣으면 됨)
+
+
+
+    let str = "Happy day~! ";  //공백 포함 12
+
+    console.log(str.length); //12
+    console.log(str.toUpperCase());//모두 대문자로 변경
+    //검색을 하는 상황일 때 python, Python, PYTHON / 데이터베이스에는 Python으로 담겨있음
+    //str.toLowerCase() / db.toLowerCase()  -> 둘다 소문자로 python
+
+    console.log(str.indexOf('p')); //제일 처음 만난 인덱스값을 출력 : 2
+
+    //str.slice(startIdx[,endIndx]) -> []대괄호가 나오면 옵셔널한 값이라고 생각하면 됨(파라미터가 오는 자리에 []가 있으면 있어도 되고 없어도 되는 옵셔널한)
+    //startIdx 포함, endIdx 포함하지 않음
+    console.log(str.slice(1, 4)); //마지막인덱스는 포함하지 않음
+
+    //이것도 많이 쓰임
+    console.log(str.replace("-", ""));
+    //데이터베이스에는 전화번호같은 것을 데쉬 없애고 저장(실제론 이럴때도 사용함)
+    //phone.replace("-",""); 010-0000-0000(처음에 만난 한개만 변경해줌 -> 0100000-0000)
+    //phone.replaceAll("-",""); 010-0000-0000 -> 01000000000
+
+
+    console.log(str.replace('p', 'a'));
+    console.log(str.replaceAll('p', 'a'));
+
+
+
+
+
+
+
+    console.log(str.repeat(3));
+
+    console.log(str.trim());  // 앞 뒤 공백 제거(진짜 많이 사용함)
+    const trimStr = str.trim(); //str의 원형이 바뀌진 않음
+    //언제 사용하나 -> 사용자가 검색창에 공백을 입력한지 모르고 입력
+    //'python ', ' python' / db에 존재하는 'python'과 비교하기 위해
+    //str.trim().toLowerCase();
+
+
+
+    //기준이 된 것들은 삭제 됨
+    console.log(str.split('')); //한글자씩 끊어서 배열에 저장(이것도 많이 씀)
+    console.log(str.split(' ')); //단어 기준으로 끊어서 배열에 저장
+    console.log(str.split('a')); //a 문자열을 기준으로 끊어서 배열에 저장
+    //언제 사용하나
+    //str.split('\n') //엔터 기준으로 잘라서 저장
+    //str = '안녕하세요.\n안녕하세요.'        -> 실제로 html에서는 엔터가 안 먹힘
+    //str.split('\n') => ['안녕하세요.','안녕하세요.']
+    //for -> 적절한 위치에 br 태그 넣기
+
+
+
+
+
+
+
+
+    const str2 = "AAaaabbbb";
+    const lowerStr2 = str2.toLowerCase(); //결과값을 받아줌
+    console.log(str2);  //str2의 원형이 바뀌진 않기 때문에 AAaaabbbb출력
+    console.log(lowerStr2);//aaaaabbbb
+  </script>
+  안녕하세요.<br />
+  안녕하세요.
+</body>
+
+</html>

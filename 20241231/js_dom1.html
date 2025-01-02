@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      display: inline-block;
+    }
+
+    .green {
+      background-color: green;
+    }
+
+    .red {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="hello">안녕하세요</div>
+  <!-- <div id="hello">안녕하세요2</div>      id를 중복할 경우 처음 나온 하나만 가져옴 -->
+
+
+  <div class="box green">클래스 선택 초록</div>
+  <div class="box red">클래스 선택 빨강</div>
+
+  <!-- //name 키값, value직접 입력한 값 -->
+  <input type="text" name="phone" />
+
+  <div>
+    <span>hello</span>
+  </div>
+
+  <hr />
+
+  <div class="container red">
+    안녕하세요
+    <!-- 텍스트값만 뽑음(bold안됨) -->
+    <b>^^</b>
+  </div>
+
+  <input type="text" name="email" id="email-input" />
+
+  <div>
+    <span>
+      ?
+    </span>
+    <span class="test-parent">
+      Hello World
+    </span>
+    <span>
+      !
+    </span>
+  </div>
+
+  <div>
+    ?<span class="test-parent2">
+      Hello World
+    </span>!
+  </div>
+
+  <script>
+    //body에 요소 추가 -> document.createElemet()
+    //객체 하나만 선택 -> 객체.appendChild()
+
+    const container = document.querySelector(".container")
+    console.log(container.innerText)  //선택된 요소 내의 텍스트에 접근
+    console.log(container.innerHTML)  //선택된 요소 내의 요소에 접근(태그까지 모두 출력됨.)
+
+
+    //innerText 이용해서 선택된 요소의 내용을 바꿀 수 있음.(텍스트만 가능)
+    // container.innerText = 'hello<b>^^</b>';
+
+    //innerHTML을 이용해서 선택된 요소의 내용을 바꿀 수 있음.(태그 작성 가능)
+    container.innerHTML = 'hello<b>^^</b>';  //안녕하세요^^ -> hello
+
+
+    console.log(container.className);
+    // container.className = "container green";
+    console.log(container.classList);
+    console.log(container.classList.contains("red")); //red라는 css를 포함하고 있는지? 반환값 boolean
+
+
+    if (container.classList.contains("red")) {
+      container.classList.remove("red");
+    } else {
+      container.classList.add("red");
+    }
+    // container.classList.toggle("red/*클래스이름*/") //위의 if문을 축약해놓은 함수
+
+    cosnole.log(container.textContent); //innerText와 비슷
+    container.textContent = 'hi'
+
+
+    const input = document.getElementById("email-input");
+
+
+    input.setAttribute("placeholder", "이메일을 입력해주세요"); //태그의 속성을 설정할 수 있는 함수
+    console.log(input.getAttribute("placeholder"));
+
+
+
+
+
+    const body = document.querySelector("body");
+    //1. 자식 노드에 접근
+    console.log(body.children[0]);
+
+
+    const test = document.querySelector(".test-parent");
+    //2. 부모 노드에 접근
+    console.log(test.parentNode)  //요소가 아닌 것도 반환이 가능하다
+    console.log(test.parentElement) //요소만 반환 가능. 요소가 없으면 null 선택
+
+
+    //3. 형제 노드에 접근(이전, 다음)
+    console.log(test.nextElementSibling)  //요소의 다음 형제 요소를 찾음
+    console.log(test.previousElementSibling)  //요소의 이전 형제 요소를 찾음
+
+
+    const test2 = document.querySelector(".test-parent2")
+    console.log(test2.nextSibling)  //요소의 다음 텍스트를 찾음
+    console.log(test2.previousSibling)  //요소의 이전 텍스트를 찾음
+
+  </script>
+</body>
+
+</html>

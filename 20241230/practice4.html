@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습7</title>
+  <script>
+    // for (let i = 13; i <= 10000; i++) {
+    //   if (i % 13 === 0 && i % 2 != 0) {
+    //     console.log(i);
+    //   }
+    // }
+    //+prompt
+    let num = prompt("숫자를 입력해주세요.");
+    for (let i = 13; i <= num; i++) {
+      if (i % 13 === 0 && i % 2 !== 0) {
+        console.log(i);
+      }
+    }
+
+
+    // 힌트
+    // 13의 배수:i%13===0
+    // 홀수:i%2===1
+    // &&연산자-> a&&b->a와 b를 모두 만족할 경우 true
+    // 13의 배수이면서 홀수인가?:i%13===0&&i%2===1
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

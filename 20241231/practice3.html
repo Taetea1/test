@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>계산기</title>
+</head>
+
+<body>
+  <div>
+    <span>값1:</span>
+    <input type="text" name="value1" id="value1-input" />
+  </div>
+  <div>
+    <span>값2:</span>
+    <input type="text" name="value2" id="value2-input" />
+  </div>
+  <div>
+    <span>연산자:</span>
+    <input type="text" name="do" id="do-input" />
+  </div>
+  <div>
+    <span>결과:</span>
+    <input type="text" name="result" id="result-input" />
+  </div>
+  <br />
+  <div>
+    <button onclick="calc()">계산하기</button>
+    <button onclick="init()">초기화</button>
+  </div>
+
+
+  <script>
+    function calc() {
+      let outvalue = '';
+      const value1 = Number(document.getElementById("value1-input").value);
+      const value2 = Number(document.getElementById("value2-input").value);
+      const op = document.getElementById("do-input").value;
+
+      switch (op) {
+        case '+':
+          outvalue = value1 + value2;
+          break;
+        case '-':
+          outvalue = value1 - value2;
+          break;
+        case '*':
+          outvalue = value1 * value2;
+          break;
+        case '/':
+          outvalue = value1 / value2;
+          break;
+
+
+      }
+
+      document.getElementById("result-input").value = outvalue
+    }
+
+    function init() {
+      document.getElementById("value1-input").value = '';
+      document.getElementById("value2-input").value = '';
+      document.getElementById("do-input").value = '';
+      document.getElementById("result-input").value = '';
+    }
+
+  </script>
+</body>
+
+</html>
