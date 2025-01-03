@@ -1,0 +1,51 @@
+/* .text {
+  font-size: 30px;
+  background-color: red;
+}
+.ham {
+  display: none;
+} */
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  /* 아무리 넓어져도 최대가 1280px(줄어들 수 있음) */
+  max-width: 1280px;
+  margin: 0px auto;
+
+  div {
+    height: 400px;
+  }
+}
+.left {
+  width: 50%;
+  background-color: red;
+}
+.right {
+  width: 50%;
+  background-color: blue;
+}
+@media screen and (max-width: 768px) {
+  .menu {
+    display: block;
+    div {
+      width: 100%;
+    }
+  }
+}
+
+/* 모바일시에 */
+/* @media screen and (max-width: 768px) {
+  .text {
+    font-size: 20px;
+    background-color: blue;
+  }
+  .ham {
+    display: block;
+  }
+}
+@media screen and (max-width: 480px) {
+  .text {
+    background-color: green;
+  }
+} */

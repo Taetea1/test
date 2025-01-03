@@ -1,0 +1,39 @@
+.header {
+  width: 100%;
+  /* div는 width를 안 주면 100%가 먹음 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(189, 236, 255);
+  height: 100px;
+}
+.menu {
+  padding: 18px;
+  font-weight: bolder;
+}
+
+.menu2 {
+  padding: 4px;
+  background-color: rgb(239, 255, 255);
+  text-align: center;
+  display: none;
+}
+
+.m {
+  padding: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .text {
+    font-size: 20px;
+  }
+  .menu2 {
+    display: block;
+  }
+  .header {
+    height: 60px;
+  }
+  .menu {
+    display: none;
+  }
+}
