@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="wrap">
+    <img src="" alt="" />
+    <div class="btns">->flex로 일자 만들기(radius를 먹음)
+      <!-- 요소추가 -->
+      <div>사과</div>
+      <div>바나나</div>
+      <div>포도</div>
+      <div>복숭아</div>
+    </div>
+  </div>
+</body>
+<script>
+  --> 뭐눌렀을 때 뭐하는 함수 만들기
+  let img = "";
+
+  const changeImg = (url) => {
+    img = url;
+  }
+
+  const data = [
+    { value: '사과', url: '이미지 주소' },
+    { value: '바나나' },
+    { value: '포도' },
+    { value: '복숭아' },
+  ];
+  forEach로
+  document.요소추가 
+  onclick이벤트로 넣음(chageImg(${ data의 url }))
+    (div가 4개 생김 -> btns의 자식요소로)
+
+</script>
+
+</html>

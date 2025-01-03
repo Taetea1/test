@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="box">눌러보세요</div>
+  <div class="box2">눌러보세요2</div>
+</body>
+<script>
+  //클릭시 실행 함수
+  const clickFunction = () => {  //넣을 함수 작성
+    alert("클릭하셨습니다!");
+  }
+
+  let boxEl = document.querySelector(".box"); //박스 찍고
+  let boxEl2 = document.querySelector(".box2"); //박스 찍고
+
+
+  boxEl.addEventListener("click", clickFunction);  //리스너에 함수 넣음
+  boxEl2.addEventListener("click", clickFunction);  //리스너에 함수 넣음
+</script>
+
+</html>

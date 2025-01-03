@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="practice1_jquery.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="wrap">
+    <img src="./images/default.png" alt="" id="imgId" />
+    <div class="btns">
+      <div data-type="사과" class="btn">사과</div>
+      <div data-type="바나나" class="btn">바나나</div>
+      <div data-type="포도" class="btn">포도</div>
+      <div data-type="복숭아" class="btn">복숭아</div>
+    </div>
+  </div>
+</body>
+<script>
+  $(document).ready(function () {
+    $('.btn').click(function () {
+      const type = $(this).data('type');
+      let imgSrc;
+
+      if (type === '사과') {
+        imgSrc = './images/사과.jpg';
+      } else if (type === '바나나') {
+        imgSrc = './images/바나나.webp';
+      } else if (type === '포도') {
+        imgSrc = './images/포도.jpg';
+      } else {
+        imgSrc = './images/복숭아.jpeg';
+      }
+
+      $('#imgId').attr('src', imgSrc);
+    });
+  });
+</script>
+
+</html>

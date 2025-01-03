@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.box {
+  margin: 20px;
+}
+.calendar {
+  margin: 20px;
+  align-self: flex-end;
+}
+.month {
+  font-size: 25px;
+  color: green;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 25px;
+}
+th,
+td {
+  width: 50px;
+  height: 55px;
+  text-align: left;
+  vertical-align: top;
+  padding: 10px;
+}
+.s:first-child {
+  color: red;
+}
+.s:last-child {
+  color: blue;
+}
+div {
+  color: black;
+}

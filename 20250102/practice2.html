@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="practice2.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- <script>
+  //@td요소 중에서 첫번째 자식(색깔) 
+  document.querySelector('td').innerHTML = '<td style="color:red"></td>';
+</script> -->
+
+<body>
+  <div class="box">
+    <div>
+      <span>날짜 : </span>
+      <input type="text" id="day" />
+    </div>
+    <div>
+      <span>내용 : </span>
+      <input type="text" id="content" />
+    </div>
+    <button onclick="addContent()">작성</button>
+  </div>
+  <div class="calendar">
+    <div class="month">2025년 1월</div>
+    <table>
+      <tr>
+        <th class="s">日</th>
+        <th>月</th>
+        <th>火</th>
+        <th>水</th>
+        <th>木</th>
+        <th>金</th>
+        <th class="s">土</th>
+      </tr>
+      <tr>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span>1</span></td>
+        <td><span>2</span></td>
+        <td><span>3</span></td>
+        <td class="s"><span>4</span></td>
+      </tr>
+      <tr>
+        <td class="s"><span>5</span></td>
+        <td><span>6</span></td>
+        <td><span>7</span></td>
+        <td><span>8</span></td>
+        <td><span>9</span></td>
+        <td><span>10</span></td>
+        <td class="s"><span>11</span></td>
+      </tr>
+      <tr>
+        <td class="s"><span>12</span></td>
+        <td><span>13</span></td>
+        <td><span>14</span></td>
+        <td><span>15</span></td>
+        <td><span>16</span></td>
+        <td><span>17</span></td>
+        <td class="s"><span>18</span></td>
+      </tr>
+      <tr>
+        <td class="s"><span>19</span></td>
+        <td><span>20</span></td>
+        <td><span>21</span></td>
+        <td><span>22</span></td>
+        <td><span>23</span></td>
+        <td><span>24</span></td>
+        <td class="s"><span>25</span></td>
+      </tr>
+      <tr>
+        <td class="s"><span>26</span></td>
+        <td><span>27</span></td>
+        <td><span>28</span></td>
+        <td><span>29</span></td>
+        <td><span>30</span></td>
+        <td class="s"><span>31</span></td>
+        <td><span></span></td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script>
+  const addContent = () => {
+    let days = document.getElementById("day").value.trim();
+    let contents = document.getElementById("content").value;
+
+
+    const spanElements = document.querySelectorAll("span");  //span 모두 선택(숫자비교)
+    const tdElements = document.querySelectorAll("td");  //td 모두 선택(내용 넣을 곳)
+
+
+    // 순회를 통해 요소에 접근(td에 적힌 숫자 비교해서 안에 넣기)
+    for (let i = 0; i < spanElements.length; i++) {
+      console.log('확인', spanElements[i].textContent);
+      console.log('확인2', days);
+      console.log('dddddddddddddddd', i);
+      if (spanElements[i].textContent === days) {
+        //있던 요소 삭제
+        if (document.getElementsByClassName(`${days}`)[0]) {
+          var element = document.getElementsByClassName(`${days}`)[0];
+          element.remove();
+        }
+
+        //div요소를 만들어 내용 넣음
+        const div = document.createElement('div');
+        div.className = days;
+        div.innerText = contents;
+
+        console.log('eeeeeeeeeeeeee', i);
+        //새로운 요소 추가
+        tdElements[i - 2].appendChild(div);
+      }
+    }
+
+    //초기화
+    document.getElementById("day").value = '';
+    document.getElementById("content").value = '';
+
+
+  }
+</script>
+
+</html>

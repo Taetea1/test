@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="practice2_jquery.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="box">
+    <div>
+      <span>날짜 : </span>
+      <input type="text" id="day" />
+    </div>
+    <div>
+      <span>내용 : </span>
+      <input type="text" id="content" />
+    </div>
+    <button id="submit">작성</button>
+  </div>
+  <div class="calendar">
+    <div class="month">2025년 1월</div>
+    <table>
+      <tr>
+        <th class="s">日</th>
+        <th>月</th>
+        <th>火</th>
+        <th>水</th>
+        <th>木</th>
+        <th>金</th>
+        <th class="s">土</th>
+      </tr>
+      <tr>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span>1</span></td>
+        <td><span>2</span></td>
+        <td><span>3</span></td>
+        <td class="s"><span>4</span></td>
+      </tr>
+      <tr>
+        <td class="s"><span>5</span></td>
+        <td><span>6</span></td>
+        <td><span>7</span></td>
+        <td><span>8</span></td>
+        <td><span>9</span></td>
+        <td><span>10</span></td>
+        <td class="s"><span>11</span></td>
+      </tr>
+      <tr>
+        <td class="s"><span>12</span></td>
+        <td><span>13</span></td>
+        <td><span>14</span></td>
+        <td><span>15</span></td>
+        <td><span>16</span></td>
+        <td><span>17</span></td>
+        <td class="s"><span>18</span></td>
+      </tr>
+      <tr>
+        <td class="s"><span>19</span></td>
+        <td><span>20</span></td>
+        <td><span>21</span></td>
+        <td><span>22</span></td>
+        <td><span>23</span></td>
+        <td><span>24</span></td>
+        <td class="s"><span>25</span></td>
+      </tr>
+      <tr>
+        <td class="s"><span>26</span></td>
+        <td><span>27</span></td>
+        <td><span>28</span></td>
+        <td><span>29</span></td>
+        <td><span>30</span></td>
+        <td class="s"><span>31</span></td>
+        <td><span></span></td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+<script>
+  $(document).ready(function () {
+    $('#submit').click(function () {
+      let days = $('#day').val().trim();
+      let contents = $('#content').val();
+
+      // Loop through all span elements to find the matching day
+      $("span").each(function () {
+        if ($(this).text() === days) {
+          // Remove the existing content div if it exists
+          if ($(`.${days}`).length > 0) {
+            $(`.${days}`).remove();
+          }
+
+          // Create a new div and append the content
+          const newDiv = $('<div></div>').addClass(days).text(contents);
+          $(this).parent().append(newDiv);
+        }
+      });
+
+      // Clear the input fields
+      $('#day').val('');
+      $('#content').val('');
+    });
+  });
+</script>
+
+</html>

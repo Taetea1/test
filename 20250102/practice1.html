@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="practice1.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <img src="../images/default.png" alt="" id="imgId" />
+    <div class="btns">
+      <div onclick="change('사과')" class="btn">사과</div>
+      <div onclick="change('바나나')" class="btn">바나나</div>
+      <div onclick="change('포도')" class="btn">포도</div>
+      <div onclick="change('복숭아')" class="btn">복숭아</div>
+    </div>
+
+
+  </div>
+</body>
+<script>
+  const change = (type) => {
+    if (type === '사과') {
+      // document.getElementById("imgId").src = '../images/사과.jpg'; //querySelector
+      document.querySelector("img").src = '../images/사과.jpg'; //querySelector
+    } else if (type === '바나나') {
+      document.getElementById("imgId").src = '../images/바나나.webp';
+    } else if (type === '포도') {
+      document.getElementById("imgId").src = '../images/포도.jpg';
+    } else {
+      document.getElementById("imgId").src = '../images/복숭아.jpeg';
+    }
+  }
+</script>
+
+</html>
