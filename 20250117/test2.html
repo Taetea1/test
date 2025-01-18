@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  table,
+  th,
+  td {
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 2px 10px;
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  .box {
+    margin: 0 auto;
+    max-width: 1000px;
+    margin-top: 5px;
+    border: 1px solid;
+  }
+</style>
+
+<body>
+  <div class="main-wrap">
+    <!-- js로 동적 추가 -->
+    <!-- 1번째 테이블 2번째 테이블 row 클릭시에 -->
+  </div>
+  <!-- br태그 -->
+  <!-- 1번째 -->
+  <!-- 이름 나이 커리어 별명 -->
+
+  <!-- 2번째 -->
+  <!-- 해당하는 줄을 눌렀을때 alert 혹은 모달을 사용해서
+  해당하는 사람의 이름은 name이고 나이는 age이며 미성년자||성인 입니다.
+  커리어에는 놀기, 먹기, 자기, 숨쉬기가 있고 별명으로는 ,로 나와야함 -->
+
+  <!-- 3번째 -->
+  <!-- 1. 미성년자는 000이 있고 그 사람의 커리어는 careers가 있으며 별명은 nickName입니다.
+  2. 성인은 name,name이 있고 name의 커리어는 career가 있으며 별명은 nickName입니다.name의 커리어는 career가 있으며 별명은 nickName입니다.
+  3. 별명중 가장 별명이 긴사람을 찾는 알고리즘을 만들어주세요.(광철)
+  div든 span이든 3개가 나옴 -->
+</body>
+<script>
+  // 데이터
+  const data = [
+    {
+      id: 1,
+      name: '김철수',
+      age: 14,
+      careers: [
+        { title: "놀기" },
+        { title: "먹기" },
+        { title: "자기" },
+        { title: "숨쉬기" },
+      ],
+      nickName: [
+        { name: "김안철수" },
+        { name: "김김안철수" },
+        { name: "박터짐" },
+      ],
+    },
+    {
+      id: 2,
+      name: '영희',
+      age: 35,
+      careers: [
+        { title: "놀기" },
+        { title: "자전거타기" },
+        { title: "오렌지먹기" },
+        { title: "사과부시기" },
+      ],
+      nickName: [
+        { name: "김영희" },
+        { name: "야생사자" },
+        { name: "오올이" },
+      ],
+    },
+    {
+      id: 3,
+      name: '박광철',
+      age: 20,
+      careers: [
+        { title: "일수나가기" },
+        { title: "돈빌려주기" },
+        { title: "공무집행방해하기" },
+        { title: "무면허운전하기" },
+      ],
+      nickName: [
+        { name: "대흥역호랑이와사자두마리" },
+        { name: "마포불주먹" },
+        { name: "전설" },
+        { name: "경찰의적" },
+      ],
+    },
+  ];
+  // 1번째
+  //요소에 추가할 부모요소
+  const peopletable = document.querySelector(".main-wrap");
+  //요소에 table을 넣음(우리는 tbody부분에 데이터를 추가할 예정)
+  peopletable.innerHTML = `
+  <table>
+    <thead>
+      <tr>
+        <td>이름</td>
+        <td>나이</td>
+        <td>커리어</td>
+        <td>별명</td>
+      </tr>
+    </thead>
+    <tbody class="tablebody">
+
+    </tbody>
+  </table>`;
+
+  //tbody에 넣어줄 데이터들
+  const userinfo = data.map((x, i) => {//x는 data에서 하나의 객체(즉 data에서 봤을때 각 id부터 nickName까지(분홍색 중괄호..?)를 의미)
+    //console.log(x.id)를 하면 1, 2, 3을 하나씩 출력함
+    //그러나 careers와 nickName은 []안에 더 들어가 있기때문에 map으로 한번더 돌려줘야함
+    const careerr = x.careers.map((a, b) => {
+      return `${a.title}</br>`;
+    });
+    const nickNamee = x.nickName.map((a, b) => {
+      return `${a.name}</br>`;
+    });
+    //tbody를 innerHTML로 넣어줄 요소들
+    return `<tr id=${x.id} onclick="readyalert(${x.id})">
+        <td>${x.name}</td>
+        <td>${x.age}</td>
+        <td>${careerr.join('')}</td>
+        <td>${nickNamee.join('')}</td>
+      </tr >`;
+  });
+  //앞에서 innerHTML에 적은 tbody태그의 class를 이용해 가져옴
+  const tbody = document.querySelector('.tablebody');
+  //해당 tbody요소에 map으로 만든 데이터를 넣어줌
+  tbody.innerHTML = userinfo.join('');
+
+  // 2번째
+  const readyalert = (id) => {
+    data.forEach((x, i) => {
+      const ca = x.careers.map((a, b) => {
+        return a.title;
+      })
+      const ni = x.nickName.map((a, b) => {
+        return a.name;
+      })
+      let adult = "성인";
+      if (id === x.id) {
+        if (x.age < 20) {
+          adult = "미성년자";
+        }
+        alert(`이름은 ${x.name}이고 나이는 ${x.age}이며 ${adult}입니다. 커리어에는 ${ca}가 있고 별명으로는 ${ni}이 있습니다.`);
+      }
+    })
+  }
+
+  // 3번째
+  // 성인 이름
+  //data.age가 20보다 큰 data들만 ainfo에 저장(성인 데이터만 뽑아내기 위해)
+  const ainfo = data.filter((data) => data.age >= 20);
+  //ainfo에서 map으로 돌려 해당 이름들만 adultname에 저장(성인인 사람들의 이름을 알기 위해)
+  const adultname = ainfo.map((x, i) => x.name);
+
+  //ainfo에서 map을 돌리는데 careers는 []로 name이 안쪽에 더 있기 때문에 map을 이중으로 돌려줌
+  const car1 = ainfo.map((x, i) => {
+    const ca = x.careers.map((a, b) => {
+      return a.title;
+    })
+    return ca;
+  });
+  //nickName도 careers와 마찬가지
+  const ni1 = ainfo.map((x, i) => {
+    const ni = x.nickName.map((a, b) => {
+      return a.name;
+    })
+    return ni;
+  });
+
+  // 미성년자 이름(성인과 동일(나이 조건만 다름))
+  const binfo = data.filter((data) => data.age < 20);
+  const babyname = binfo.map((x, i) => x.name);
+
+  const car2 = binfo.map((x, i) => {
+    const ca = x.careers.map((a, b) => {
+      return a.title;
+    })
+    return ca;
+  });
+
+  const ni2 = binfo.map((x, i) => {
+    const ni = x.nickName.map((a, b) => {
+      return a.name;
+    })
+    return ni;
+  });
+
+
+  // 가장 별명이 긴사람
+  const longnick = () => {
+    //가장 긴 별명(처음은 아무것도 없으니 0으로 해줌)
+    let max = 0;
+    //가장 긴 별명이 뭔지 저장해줄 변수
+    let rrr;
+
+    //data를 map으로 돌려서 nickName 데이터들을 빼냄
+    const nick = data.map((x, i) => {
+      return x.nickName
+    });
+
+    //nick은 {}{}{}이런식으로 철수, 영희, 광철씨의 별명들이 들어있음
+    // (그렇다면 또 아까처럼 이중으로 들어가줘야하기 때문에 map을 이중으로 사용해줌)
+    nick.map((a, b) => {
+      a.map((c, d) => {
+        //닉네임의 길이가 현재 max길이보다 크다면
+        if (c.name.length > max) {
+          //max에 그 길이를 저장(다음에 또 비교해줘야함)
+          max = c.name.length;
+          //rrr에 가장 긴 닉네임을 저장
+          rrr = c.name;
+        }
+      })
+
+    })
+    //map을 다 돌고나면 rrr에 가장 긴 닉네임이 남음
+    return rrr;
+  }
+
+  //위의 함수를 실행해서 결과를 변수에 넣어줌
+  let longperson = longnick();
+
+  //위에서 처리한 데이터들을 알맞게 넣어주기(미성년자는 한명이기때문에 데이터가 하나만 들어가 있음->그래서 인덱스를 안 적어줘도 상관없음)
+  //(그러나 성인은 2명이기 때문에 각각 인덱스를 통해 넣어줬음)
+  peopletable.innerHTML += `<div class="box">1. 미성년자는 ${babyname}가 있고 그 사람의 커리어는 ${car2}가 있으며 별명은 ${ni2}입니다.</br>
+  2. 성인은 ${adultname}이 있고 ${adultname[0]}의 커리어는 ${car1[0]}가 있으며 별명은 ${ni1[0]}입니다. ${adultname[1]}의 커리어는 ${car1[1]}가 있으며 별명은 ${ni1[1]}입니다.</br>
+  3. ${longperson}</div>`;
+
+</script>
+
+</html>

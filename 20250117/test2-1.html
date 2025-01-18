@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .main-wrap {
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 1100px;
+      animation: fadeIn 1s ease-out;
+    }
+
+    /* 애니메이션 추가 */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* 테이블 스타일 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #fffcf9;
+      overflow: hidden;
+    }
+
+    th,
+    td {
+      padding: 15px;
+      text-align: center;
+      border: 1px solid #ff80b3;
+      font-size: 16px;
+      color: #444;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+
+    /* th에 호버 효과 제거 */
+    th {
+      background-color: #ff80b3;
+      color: white;
+      cursor: default;
+      border-bottom: 2px solid #ff66b2;
+    }
+
+    /* td에만 호버 효과 적용 */
+    td {
+      background-color: #ffe6f1;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #ffccf2;
+    }
+
+    tr:hover td {
+      background-color: #ff99cc;
+      cursor: pointer;
+    }
+
+    /* 결과 박스 */
+    .box {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #ffeff6;
+      border: 2px dashed #ff80b3;
+      border-radius: 12px;
+      color: #444;
+      font-size: 18px;
+      text-align: left;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      animation: boxFadeIn 1s ease-out;
+    }
+
+    @keyframes boxFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .box b {
+      color: #ff66b2;
+      font-weight: bold;
+    }
+
+    /* 반응형 디자인 */
+    @media (max-width: 768px) {
+      .main-wrap {
+        padding: 20px;
+      }
+
+      table,
+      th,
+      td {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .box {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-wrap">
+    <!-- 동적 테이블과 결과 박스가 추가될 영역 -->
+  </div>
+
+  <script>
+    // 데이터와 스크립트는 그대로 유지
+    const data = [
+      {
+        id: 1,
+        name: '김철수',
+        age: 14,
+        careers: [
+          { title: "놀기" },
+          { title: "먹기" },
+          { title: "자기" },
+          { title: "숨쉬기" },
+        ],
+        nickName: [
+          { name: "김안철수" },
+          { name: "김김안철수" },
+          { name: "박터짐" },
+        ],
+      },
+      {
+        id: 2,
+        name: '영희',
+        age: 35,
+        careers: [
+          { title: "놀기" },
+          { title: "자전거타기" },
+          { title: "오렌지먹기" },
+          { title: "사과부시기" },
+        ],
+        nickName: [
+          { name: "김영희" },
+          { name: "야생사자" },
+          { name: "오올이" },
+        ],
+      },
+      {
+        id: 3,
+        name: '박광철',
+        age: 20,
+        careers: [
+          { title: "일수나가기" },
+          { title: "돈빌려주기" },
+          { title: "공무집행방해하기" },
+          { title: "무면허운전하기" },
+        ],
+        nickName: [
+          { name: "대흥역호랑이와사자두마리" },
+          { name: "마포불주먹" },
+          { name: "전설" },
+          { name: "경찰의적" },
+        ],
+      },
+      {
+        id: 8,
+        name: '곽두철',
+        age: 5,
+        careers: [
+          { title: "일수나가기" },
+          { title: "돈빌려주기" },
+          { title: "공무집행방해하기" },
+          { title: "무면허운전하기" },
+        ],
+        nickName: [
+          { name: "대흥역호랑이와사자두마리ㅁㄴㅇㅁㅇㅁㄴㅇㅁㄴㅇㅇㅁㄴㅇㅁㅇㄴㄴㅁㅇㄴㅇㅁ" },
+          { name: "마포불주먹" },
+          { name: "전설" },
+          { name: "경찰의적" },
+        ],
+      },
+    ];
+
+    const peopletable = document.querySelector(".main-wrap");
+
+    peopletable.innerHTML = `
+      <table>
+      <thead>
+        <tr>
+          <td>이름</td>
+          <td>나이</td>
+          <td>커리어</td>
+          <td>별명</td>
+        </tr>
+      </thead>
+      <tbody class="tablebody">
+      </tbody>
+      </table>`;
+
+    const userinfo = data.map((x, i) => {
+      const careerr = x.careers.map((a, b) => {
+        return `${a.title}</br>`;
+      });
+      const nickNamee = x.nickName.map((a, b) => {
+        return `${a.name}</br>`;
+      });
+
+      return `<tr id=${x.id} onclick="readyalert(${x.id})">
+        <td>${x.name}</td>
+        <td>${x.age}</td>
+        <td>${careerr.join('')}</td>
+        <td>${nickNamee.join('')}</td>
+      </tr>`;
+    });
+    const tbody = document.querySelector('.tablebody');
+    tbody.innerHTML = userinfo.join('');
+
+    const readyalert = (id) => {
+      data.forEach((x, i) => {
+        const ca = x.careers.map((a, b) => {
+          return a.title;
+        });
+        const ni = x.nickName.map((a, b) => {
+          return a.name;
+        });
+        let adult = "성인";
+        if (id === x.id) {
+          if (x.age < 20) {
+            adult = "미성년자";
+          }
+          alert(`이름은 ${x.name}이고 나이는 ${x.age}이며 ${adult}입니다. 커리어에는 ${ca}가 있고 별명으로는 ${ni}이 있습니다.`);
+        }
+      });
+    };
+
+    const ainfo = data.filter((data) => data.age >= 20);
+    const adultname = ainfo.map((x, i) => x.name);
+
+    const car1 = ainfo.map((x, i) => {
+      const ca = x.careers.map((a, b) => {
+        return a.title;
+      });
+      return ca;
+    });
+
+    const ni1 = ainfo.map((x, i) => {
+      const ni = x.nickName.map((a, b) => {
+        return a.name;
+      });
+      return ni;
+    });
+
+    const binfo = data.filter((data) => data.age < 20);
+    const babyname = binfo.map((x, i) => x.name);
+
+    const car2 = binfo.map((x, i) => {
+      const ca = x.careers.map((a, b) => {
+        return a.title;
+      });
+      return ca;
+    });
+
+    const ni2 = binfo.map((x, i) => {
+      const ni = x.nickName.map((a, b) => {
+        return a.name;
+      });
+      return ni;
+    });
+
+    const longnick = () => {
+      let max = 0;
+      let rrr;
+      const nick = data.map((x, i) => {
+        return x.nickName;
+      });
+      nick.map((a, b) => {
+        a.map((c, d) => {
+          if (c.name.length > max) {
+            max = c.name.length;
+            rrr = c.name;
+          }
+        });
+      });
+      return rrr;
+    };
+
+    let longperson = longnick();
+
+    peopletable.innerHTML += `<div class="box">1. 미성년자는 ${babyname}가 있고 그 사람의 커리어는 ${car2}가 있으며 별명은 ${ni2}입니다.</br>
+      2. 성인은 ${adultname}이 있고 ${adultname[0]}의 커리어는 ${car1[0]}가 있으며 별명은 ${ni1[0]}입니다. ${adultname[1]}의 커리어는 ${car1[1]}가 있으며 별명은 ${ni1[1]}입니다.</br>
+      3. ${longperson}</div>`;
+  </script>
+</body>
+
+</html>
