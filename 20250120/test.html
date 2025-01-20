@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- <style>
+  td,
+  tr {
+    border: 1px solid;
+  }
+</style> -->
+
+<body>
+  <!-- 폼 안 쓰고 구현 (입력한 데이터값이 if어디부분에 없습니다.
+   (input밑에 띄워줄거임))->로컬스토리지 저장(로컬스토리지에 있으면 이름 나이 경력사항 별명이 테이블에 나옴)-->
+  <!-- input은 커스텀 가능 -->
+  <div class="input-wrap">
+    <!-- 아이디는 숫자 중복 불가 -->
+    <input type="number" placeholder="아이디를 입력해주세요." class="idd" />
+    <div class="idd_value"></div>
+
+    <!-- 이름 중복 가능 -->
+    <input placeholder="이름을 입력해주세요." class="namee" />
+    <div class="namee_value"></div>
+
+    <!-- 나이 숫자 -->
+    <input type="number" placeholder="나이를 입력해주세요." class="agee" />
+    <div class="agee_value"></div>
+
+    <!-- 경력사항 최소 15자리 이상 -->
+    <input placeholder="경력을 입력해주세요." class="car" />
+    <div class="car_value"></div>
+
+    <!-- 별명 최소 2자리 이상, 중복불가 -->
+    <input placeholder="별명을 입력해주세요." class="nick" />
+    <div class="nick_value"></div>
+
+    <!-- 저장시 데이터를 집어넣는 함수 실행 -->
+    <button class="btn">저장</button>
+  </div>
+
+  <!-- 테이블 -->
+  <div class="main-wrap">
+    <!-- 동적 테이블과 결과 박스가 추가될 영역 -->
+  </div>
+</body>
+<script>
+  // window.localStorage.clear();
+  // max-width:1000px;
+  let isid = false;
+  let isnick = false;
+  const idd = document.querySelector(".idd");
+  const idd_value = document.querySelector(".idd_value");
+  const namee = document.querySelector(".namee");
+  const namee_value = document.querySelector(".namee_value");
+  const agee = document.querySelector(".agee");
+  const agee_value = document.querySelector(".agee_value");
+  const car = document.querySelector(".car");
+  const car_value = document.querySelector(".car_value");
+  const nick = document.querySelector(".nick");
+  const nick_value = document.querySelector(".nick_value");
+
+  const btn = document.querySelector(".btn");
+
+  const datas = document.querySelector(".main-wrap");
+
+  datas.innerHTML = `
+      <table>
+      <thead>
+        <tr>
+          <td>이름</td>
+          <td>나이</td>
+          <td>커리어</td>
+          <td>별명</td>
+        </tr>
+      </thead>
+      <tbody class="tablebody">
+      </tbody>
+      </table>`;
+  let data = [];
+  //사용자 정보 가져오기
+  const getUserInfo = () => {
+    let userList = JSON.parse(localStorage.getItem("userInfo"));
+    console.log("a", userList);
+
+    if (userList === null) {
+      return [];
+    } else {
+      // 배열을 빼고 넣어주기
+      data.push(...userList);
+      console.log("da", data);
+      const tbodys = document.querySelector(".tablebody");
+      userList.map((x, i) => {
+        console.log('1111', x.name);
+        tbodys.innerHTML += `
+      <tr>
+        <td>${x.name}</td>
+        <td>${x.age}</td>
+        <td>${x.car}</td>
+        <td>${x.nick}</td>
+      </tr>
+    `;
+
+
+      })
+
+      return data;
+    }
+  }
+
+  const userInfo = getUserInfo();
+
+
+  const checkdupleid = () => {
+    if (idd.value === "") {
+      idd_value.textContent = "아이디가 비어있습니다. 숫자로 넣어주세요.";
+    } else {
+      idd_value.textContent = "";
+    }
+  }
+  const checkduplename = () => {
+    if (namee.value === "") {
+      namee_value.textContent = "이름이 비어있습니다. 다시 넣어주세요.";
+    } else {
+      namee_value.textContent = "";
+    }
+  }
+  const checkdupleage = () => {
+    if (agee.value === "") {
+      agee_value.textContent = "나이가 비어있습니다. 숫자로 넣어주세요.";
+    } else {
+      agee_value.textContent = "";
+    }
+  }
+  const checkduplecar = () => {
+    if (car.value === "") {
+      car_value.textContent = "경력이 비어있습니다. 15자리 이상 적어주세요.";
+    } else {
+      car_value.textContent = "";
+    }
+  }
+  const checkduplenick = () => {
+    if (nick.value === "") {
+      nick_value.textContent = "별명이 비어있습니다. 다시 넣어주세요.";
+    } else {
+      nick_value.textContent = "";
+    }
+  }
+  idd.addEventListener("input", checkdupleid);
+  namee.addEventListener("input", checkduplename);
+  agee.addEventListener("input", checkdupleage);
+  car.addEventListener("input", checkduplecar);
+  nick.addEventListener("input", checkduplenick);
+
+
+  btn.addEventListener("click", () => {
+    // 데이터 넣기
+
+    data.map((x, i) => {
+      // console.log("data", data);
+      console.log("dataddddd", x.id);
+      if (x.id === idd.value) {
+        isid = true;
+      } else {
+        isid = false;
+      }
+      if (x.nick === nick.value) {
+        isnick = true;
+      } else {
+        isnick = false;
+      }
+    })
+    if (isid === true) {
+      idd_value.textContent = "이미 존재하는 아이디입니다.";
+    }
+    if (isnick === true) {
+      nick_value.textContent = "이미 존재하는 별명입니다.";
+    }
+    if (car.value.length < 15) {
+      car_value.textContent = "경력은 15자리 이상 작성해주세요.";
+    }
+
+    if (isid === false && isnick === false && car.value.length >= 15) {
+      idd_value.textContent = "";
+      // 데이터 넣기
+      let userInfo1 = { id: idd.value, name: namee.value, age: agee.value, car: car.value, nick: nick.value }
+      data.push(userInfo1);
+
+      localStorage.setItem("userInfo", JSON.stringify(data));
+
+      document.querySelector(".tablebody").innerHTML += `
+      <tr>
+        <td>${data[data.length - 1].name}</td>
+        <td>${data[data.length - 1].age}</td>
+        <td>${data[data.length - 1].car}</td>
+        <td>${data[data.length - 1].nick}</td>
+      </tr>
+    `;
+      idd.value = "";
+      namee.value = "";
+      agee.value = "";
+      car.value = "";
+      nick.value = "";
+    }
+  })
+
+</script>
+
+</html>
