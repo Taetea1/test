@@ -5,51 +5,119 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #fdf5e6;
+      color: #4b4b4b;
+    }
+
+    .input-wrap,
+    .main-wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      background-color: #fffaf0;
+    }
+
+    .input-wrap {
+      margin-bottom: 20px;
+    }
+
+    .input-wrap input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #d2b48c;
+      border-radius: 6px;
+      background-color: #fefae0;
+    }
+
+    .input-wrap input:focus {
+      outline: none;
+      border: 2px solid #ff8c00;
+    }
+
+    .input-wrap div {
+      font-size: 12px;
+      color: #b22222;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      display: block;
+      margin-left: auto;
+      padding: 10px 20px;
+      background-color: #deb887;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #bc8f8f;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table th,
+    table td {
+      border: 1px solid #d2b48c;
+      padding: 10px;
+      text-align: left;
+    }
+
+    table th {
+      background-color: #f5deb3;
+    }
+
+    @media (max-width: 768px) {
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
-<!-- <style>
-  td,
-  tr {
-    border: 1px solid;
-  }
-</style> -->
 
 <body>
-  <!-- 폼 안 쓰고 구현 (입력한 데이터값이 if어디부분에 없습니다.
-   (input밑에 띄워줄거임))->로컬스토리지 저장(로컬스토리지에 있으면 이름 나이 경력사항 별명이 테이블에 나옴)-->
-  <!-- input은 커스텀 가능 -->
   <div class="input-wrap">
-    <!-- 아이디는 숫자 중복 불가 -->
     <input type="number" placeholder="아이디를 입력해주세요." class="idd" />
     <div class="idd_value"></div>
 
-    <!-- 이름 중복 가능 -->
     <input placeholder="이름을 입력해주세요." class="namee" />
     <div class="namee_value"></div>
 
-    <!-- 나이 숫자 -->
     <input type="number" maxlength="3" oninput="numberMaxLength(this);" placeholder="나이를 입력해주세요." class="agee" />
     <div class="agee_value"></div>
 
-    <!-- 경력사항 최소 15자리 이상 -->
     <input placeholder="경력을 입력해주세요." class="car" />
     <div class="car_value"></div>
 
-    <!-- 별명 최소 2자리 이상, 중복불가 -->
     <input placeholder="별명을 입력해주세요." class="nick" />
     <div class="nick_value"></div>
 
-    <!-- 저장시 데이터를 집어넣는 함수 실행 -->
     <button class="btn">저장</button>
   </div>
 
-  <!-- 테이블 -->
   <div class="main-wrap">
     <!-- 동적 테이블과 결과 박스가 추가될 영역 -->
   </div>
 </body>
 <script>
   // window.localStorage.clear();
-  // max-width:1000px;
   let isid = false;
   let isnick = false;
   let isage = false;
