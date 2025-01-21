@@ -97,6 +97,8 @@ button[disabled]:hover {
 
 .flexbtn {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 table {
