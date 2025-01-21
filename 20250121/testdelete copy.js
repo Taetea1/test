@@ -52,11 +52,9 @@ const getUserInfo = () => {
     <tr>
       <td>${x.name}</td>
       <td>${x.age}</td>
-      <td class="test${x.id}">${x.car}</td>
+      <td><input class="test test${x.car}" value="${x.car}" readonly></input></td>
       <td>${x.nick}</td>
-      <td><div class="flexbtn">
-      <button id="${x.id}" class="changebtn" onclick=changeData(${x.id})>수정</button><button class="changebtn" onclick=removeData(${x.id})>삭제</button>
-      </div></td>
+      <td><button class="changebtn" onclick=changeData(${x.id})>수정</button><button onclick=removeData(${x.id})>삭제</button></td>
     </tr>
   `;
     });
@@ -169,19 +167,15 @@ btn.addEventListener("click", () => {
     <tr>
       <td>${data[data.length - 1].name}</td>
       <td>${data[data.length - 1].age}</td>
-      <td class="test${data[data.length - 1].id}">${
+      <td><input class="test test${data[data.length - 1].car}" value="${
       data[data.length - 1].car
-    }</td>
+    }" readonly></input></td>
       <td>${data[data.length - 1].nick}</td>
-      <td><div class="flexbtn">
-      <button id="${
+      <td><button class="changebtn" onclick=changeData(${
         data[data.length - 1].id
-      }" class="changebtn" onclick=changeData(${
+      })>수정</button><button onclick=removeData(${
       data[data.length - 1].id
-    })>수정</button><button class="changebtn" onclick=removeData(${
-      data[data.length - 1].id
-    })>삭제</button>
-    </div></td>
+    })>삭제</button></td>
     </tr>`;
     // 초기화
     idd.value = "";
@@ -192,6 +186,33 @@ btn.addEventListener("click", () => {
     isbincheck.fill(0);
     btn.disabled = true;
   }
+});
+
+//수정
+const changebtns = document.querySelectorAll(".changebtn");
+let testinput = "";
+const changeData = (id) => {
+  testinput = document.querySelector(`.test${id}`);
+
+  // const leftData2 = data.filter((item) => item.id === String(id));
+  // console.log("바꿔야되는 데이터", leftData2);
+  // if (changebtn.innerText === "수정") {
+  //   changebtn.innerText = "수정 완료";
+  // } else if ((changebtn.innerText = "수정 완료")) {
+  //   changebtn.innerText = "수정";
+  // }
+};
+
+changebtns.forEach((changebtn, index) => {
+  changebtn.addEventListener("click", () => {
+    if (changebtn.innerText === "수정") {
+      changebtn.innerText = "수정완료";
+      testinput.removeAttr("readonly");
+    } else if (changebtn.innerText === "수정완료") {
+      changebtn.innerText = "수정";
+      testinput.attr("readonly", true);
+    }
+  });
 });
 
 // 삭제
@@ -212,54 +233,11 @@ const removeData = (id) => {
     <tr>
       <td>${x.name}</td>
       <td>${x.age}</td>
-      <td class="test${x.id}">${x.car}</td>
+      <td><input class="test test${x.car}" value="${x.car}" readonly></input></td>
       <td>${x.nick}</td>
-      <td><div class="flexbtn"><button id="${x.id}" class="changebtn" onclick=changeData(${x.id})>수정</button><button class="changebtn" onclick=removeData(${x.id})>삭제</button></div></td>
+      <td><button class="changebtn" onclick=changeData(${x.id})>수정</button><button onclick=removeData(${x.id})>삭제</button></td>
     </tr>
   `;
   });
   window.location.reload();
-};
-//수정
-let c;
-let btnsss;
-let ischangecar = false;
-const changeData = (id) => {
-  const inputtest = document.querySelector(`.test${id}`);
-  btnsss = document.getElementById(`${id}`);
-  if (btnsss.innerText === "수정") {
-    btnsss.innerText = "수정완료";
-    inputtest.innerHTML = `<input class="c" value=${inputtest.innerText} oninput="checkChangeCar()" />
-    <div class="changecar"></div>`;
-    c = document.querySelector(".c");
-  } else if (btnsss.innerText === "수정완료" && ischangecar === false) {
-    btnsss.innerText = "수정";
-
-    //이렇게 가져와서 고쳐주면 그게 그대로 반영되는건가?
-    let changecar = JSON.parse(localStorage.getItem("userInfo"));
-
-    // 객체의 인덱스 찾기
-    let index = changecar.findIndex((obj) => obj.id === `${id}`);
-    changecar[index].car = c.value;
-    localStorage.setItem(`userInfo`, JSON.stringify(changecar));
-
-    inputtest.innerHTML = `<td class="test${id}">${data[index].car}</td>`;
-    window.location.reload();
-  }
-};
-const checkChangeCar = () => {
-  const carEle = document.querySelector(".changecar");
-  if (c.value.length < 15 && c.value.length > 0) {
-    carEle.textContent = "경력은 15자리 이상 작성해주세요.";
-    ischangecar = true;
-    btnsss.disabled = true; //비활성화
-  } else if (c.value.length === 0) {
-    carEle.textContent = "";
-    ischangecar = true;
-    btnsss.disabled = true; //비활성화
-  } else if (c.value.length >= 15) {
-    carEle.textContent = "";
-    ischangecar = false;
-    btnsss.disabled = false;
-  }
 };
