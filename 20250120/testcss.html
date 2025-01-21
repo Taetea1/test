@@ -206,7 +206,7 @@
     if (agee.value === "") {
       agee_value.textContent = "나이가 비어있습니다. 숫자로 넣어주세요.";
       isage = true;
-    } else if (agee.value >= 150) {
+    } else if (agee.value >= 150 && agee.value <= 0) {
       agee_value.textContent = "제대로 된 나이를 입력해주세요.";
       isage = true;
     } else {

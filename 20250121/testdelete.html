@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="./testdelete.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="input-wrap">
+    <input type="number" placeholder="아이디를 입력해주세요." oninput="checkId()" class="idd" />
+    <div class="idd_value"></div>
+
+    <input placeholder="이름을 입력해주세요." oninput="checkName()" class="namee" />
+    <div class="namee_value"></div>
+
+    <input type="number" maxlength="3" oninput="numberMaxLength(this)" placeholder="나이를 입력해주세요." class="agee" />
+    <div class="agee_value"></div>
+
+    <input placeholder="경력을 입력해주세요." oninput="checkCar()" class="car" />
+    <div class="car_value"></div>
+
+    <input placeholder="별명을 입력해주세요." oninput="checkNick()" class="nick" />
+    <div class="nick_value"></div>
+
+    <button class="btn" disabled>저장</button>
+  </div>
+
+  <div class="main-wrap">
+    <!-- 동적 테이블과 결과 박스가 추가될 영역 -->
+  </div>
+</body>
+<script src="./testdelete.js"></script>
+
+</html>
