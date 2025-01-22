@@ -66,22 +66,24 @@ const getUserInfo = () => {
 
 const userInfo = getUserInfo();
 
-//나이 수 제한
+// 사용자가 입력한 정보 확인
+
 const numberMaxLength = (e) => {
-  if (agee.value >= 150 || agee.value <= 0) {
+  //나이 수 제한
+  if (e.value.length > e.maxLength) {
+    e.value = e.value.slice(0, e.maxLength);
+  }
+
+  if (agee.value >= 150 || agee.value < 0) {
     agee_value.textContent = "제대로 된 나이를 입력해주세요.";
     isage = true;
   } else {
     agee_value.textContent = "";
     isage = false;
   }
-  if (e.value.length > e.maxLength) {
-    e.value = e.value.slice(0, e.maxLength);
-  }
 
   checkBin(agee, 2);
 };
-// 사용자가 입력한 정보 확인
 const checkId = () => {
   checkBin(idd, 0);
   let countid = data.filter((word) => word.id === idd.value);
@@ -115,6 +117,7 @@ const checkCar = () => {
 };
 const checkNick = () => {
   checkBin(nick, 4);
+
   let countnick = data.filter((word) => word.nick === nick.value);
 
   if (countnick.length !== 0) {
@@ -122,12 +125,18 @@ const checkNick = () => {
   } else {
     isnick = false;
   }
-  if (isnick === true) {
+
+  if (nick.value.length === 1) {
+    console.log("dd", nick.value.length);
+    nick_value.textContent = "별명은 2자리 이상 적어주세요.";
+    isnick = true;
+  } else if (isnick === true) {
     nick_value.textContent = "이미 존재하는 별명입니다.";
   } else {
     nick_value.textContent = "";
   }
 };
+// 버튼 비활성화
 const check = () => {
   let c = isbincheck.filter((x, i) => x === 1);
   if (c.length === 5) {
@@ -136,6 +145,7 @@ const check = () => {
     btn.disabled = true; //비활성화
   }
 };
+// 빈값인지 확인
 const checkBin = (type, index) => {
   if (type.value.trim().length !== 0) {
     isbincheck[index] = 1;
@@ -235,7 +245,7 @@ const changeData = (id) => {
   } else if (btnsss.innerText === "수정완료" && ischangecar === false) {
     btnsss.innerText = "수정";
 
-    //이렇게 가져와서 고쳐주면 그게 그대로 반영되는건가?
+    //직접변경
     let changecar = JSON.parse(localStorage.getItem("userInfo"));
 
     // 객체의 인덱스 찾기
