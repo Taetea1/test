@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #fdf5e6;
+  color: #4b4b4b;
+}
+.main-wrap table {
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+.input-wrap,
+.main-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fffaf0;
+}
+
+.input-wrap {
+  margin-bottom: 20px;
+}
+
+.input-wrap input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d2b48c;
+  border-radius: 6px;
+  background-color: #fefae0;
+}
+
+.input-wrap input:focus {
+  outline: none;
+  border: 2px solid #ff8c00;
+}
+
+.input-wrap div {
+  font-size: 12px;
+  color: #b22222;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: block;
+  margin-left: auto;
+  padding: 10px 20px;
+  background-color: #deb887;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #bc8f8f;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  background-color: gray;
+}
+button[disabled]:hover {
+  background-color: gray;
+}
+
+/* 생긴인풋 */
+.c {
+  font-size: large;
+  width: 100%;
+  outline: none;
+  border: none;
+  /* border-bottom: 3px solid #deb887; */
+  border-radius: 6px;
+  box-shadow: 1px 2px 2px 2px rgb(240, 240, 240);
+}
+.changebtn {
+  padding: 10px 20px;
+  margin: 2px;
+  background-color: #deb887;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.changebtn:hover {
+  background-color: #bc8f8f;
+}
+
+.changecar2,
+.changecar {
+  font-size: 12px;
+  color: #b22222;
+}
+
+.flexbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table td {
+  border: 1px solid #d2b48c;
+  padding: 10px;
+  text-align: center;
+}
+
+table thead {
+  background-color: #f5deb3;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+  .changebtn {
+    padding: 10px 10px;
+  }
+  .flexbtn {
+    display: flex;
+    flex-direction: column;
+  }
+}
