@@ -224,12 +224,12 @@ const changeData = (id) => {
     console.log(btnsss);
     btnsss.innerText = "수정완료";
     inputtest3.innerHTML = `
-    <input class="c c3${id}" oninput=checkChangename(${id}) value=${inputtest3.innerText} />`;
+    <input class="c c3${id}" oninput=checkChangename(${id}) value="${inputtest3.innerText}" />`;
     inputtest2.innerHTML = `
-    <input type=number maxlength=3 oninput=numberMaxLength2(this) onkeyup=changeAGE(${id}) class="c c2${id}" value=${inputtest2.innerText} />
+    <input type=number maxlength=3 oninput=numberMaxLength2(this) onkeyup=changeAGE(${id}) class="c c2${id}" value="${inputtest2.innerText}" />
     <div class="changecar changecar2${id}"></div>`;
     inputtest.innerHTML = `
-    <input class="c c${id}" oninput=checkChangeCar(${id}) value=${inputtest.innerText}/>
+    <input class="c c${id}" oninput=checkChangeCar(${id}) value="${inputtest.innerText}"/>
     <div class="changecar changecar${id}"></div>`;
   } else if (
     btnsss.innerText === "수정완료" &&
